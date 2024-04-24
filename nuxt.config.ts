@@ -12,10 +12,9 @@ export default defineNuxtConfig({
     },
   },
   components: [
-    {
-      path: '~/src/pages',
-      pathPrefix: false
-    },
     '~/components'
-  ]
+  ],
+  modules: [
+    'bootstrap-vue/nuxt',
+  ],
 });

@@ -1,11 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import '~/node_modules/bootstrap/scss/bootstrap.scss';
+
 html {
   background-color: $background;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
   color: $primary;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 h2 {
   color: $secondary;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h3 {
+  color: $secondary;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+p {
+  color: $primary;
+  font-family: 'Lato', sans-serif;
 }

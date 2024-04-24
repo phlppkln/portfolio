@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <h1>
-      Hello World!
-    </h1>
-    <h2>
-      Test test test test test
-    </h2>
-    <Home />
+  <div class="container main">
+    <div id="nav-bar">
+      <NavBar />
+    </div>
+    <NuxtPage />
   </div>
 </template>
 
 <script lang="ts">
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
