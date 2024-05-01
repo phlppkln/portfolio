@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/styles/main.scss', 'animate.css'],
+  css: ['~/assets/styles/main.scss', 'animate.css', 'bootstrap-vue/dist/bootstrap-vue.css', 'bootstrap/dist/css/bootstrap.css', 'bootstrap-icons/font/bootstrap-icons.css'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -15,6 +15,6 @@ export default defineNuxtConfig({
     '~/components'
   ],
   modules: [
-    'bootstrap-vue/nuxt',
-  ],
+    'nuxt-bootstrap-icons',
+  ]
 });

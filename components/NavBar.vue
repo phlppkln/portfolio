@@ -1,12 +1,16 @@
 <template>
   <div class="nav-bar-container">
-    <div class="navbar">
+    <div class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        
+      </div>
       <NuxtLink to="/"><div class="nav-link">Home</div></NuxtLink>
-      <NuxtLink to="/about"><div class="nav-link">About</div></NuxtLink>
       <NuxtLink to="/projects"><div class="nav-link">Projects</div></NuxtLink>
       <NuxtLink to="/playground"
         ><div class="nav-link">Playground</div></NuxtLink
       >
+
+      <NuxtLink to="/about"><div class="nav-link">About</div></NuxtLink>
     </div>
   </div>
 </template>
