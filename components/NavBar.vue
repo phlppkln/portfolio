@@ -2,9 +2,9 @@
   <div class="nav-bar-container">
     <div class="navbar navbar-expand-lg">
       <div class="navbar-toggler" type="button" @click="toggleNavBar">
-        <span class="navbar-toggler-icon"></span>
+        <div :class="{ 'toggler-icon': true, 'toggler-icon-collapsed': isCollapsed }"></div>
       </div>
-      <div class="navbar-nav" :class="{ 'navbar-nav-collapsed': isCollapsed}">
+      <div class="navbar-nav" :class="{ 'nav-collapsed': isCollapsed }">
         <NuxtLink to="/">
           <div class="nav-link">Home</div>
         </NuxtLink>
@@ -22,7 +22,9 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
+import { ref } from 'vue';
 const isCollapsed = ref(true);
 
 const toggleNavBar = () => {
@@ -31,11 +33,23 @@ const toggleNavBar = () => {
 </script>
 
 <style scoped lang="scss">
-.nav-bar-container {
+.nav-bar-container { 
   display: flex;
   align-items: right;
   justify-content: right;
   border-bottom: 4px solid $primary;
+}
+
+.nav-bar-container {
+  @media (max-width: 768px) {
+    .navbar {
+      width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+  }
 }
 
 .navbar {
@@ -43,15 +57,64 @@ const toggleNavBar = () => {
     .navbar-nav {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      .nav-item {
+      .nav-link {
         margin-bottom: 10px;
       }
-      .navbar-nav-collapsed{
+      &.nav-collapsed {
         display: none;
-        background-color: red;
       }
     }
+  }
+}
+
+.toggler-icon {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &::before,
+  &::after,
+  & > div {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  & > div {
+    top: 8px;
+  }
+
+  &::after {
+    top: 16px;
+  }
+}
+
+.toggler-icon-collapsed {
+  transform: rotate(45deg);
+
+  &::before {
+    top: 8px;
+    transform: rotate(90deg);
+  }
+
+  & > div {
+    background-color: transparent;
+  }
+
+  &::after {
+    top: 8px;
+    transform: rotate(90deg);
   }
 }
 
