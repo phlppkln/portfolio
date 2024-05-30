@@ -13,25 +13,15 @@
         :imageSrc="`https://picsum.photos/200/300?random=${i}`"
         :imageAlt="`Project ${i}`"
         :cardTitle="`Project ${i}`"
-        :cardDescription="`Project ${i}`"
+        :cardDescription="`Project Description ${i}`"
       />
     </div>
-  {{ test }}
-  <div class="custom-btn" @click="changeTest">Change Test</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import TheBaseCard from './components/TheBaseCard.vue';
-
-const test = ref('test');
-const counter = ref(0);
-
-const changeTest = () => {
-  test.value = 'changed' + counter.value;
-  counter.value++;
-}
 </script>
 
-<style></style>~/components/TheBaseCard.vue
+<style scoped lang="scss">
+
+</style>

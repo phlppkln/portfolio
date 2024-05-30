@@ -14,7 +14,5 @@ export default defineNuxtConfig({
   components: [
     '~/components'
   ],
-  modules: [
-    'nuxt-bootstrap-icons',
-  ]
+  modules: ['nuxt-bootstrap-icons', "@nuxt/image"]
 });

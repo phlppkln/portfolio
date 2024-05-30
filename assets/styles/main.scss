@@ -10,6 +10,7 @@
 h1 {
   color: $primary;
   font-family: 'Space Grotesk', sans-serif;
+  padding-top: 1em;
 }
 
 h2 {
@@ -36,4 +37,10 @@ a:hover{
 
 a{
   text-decoration: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 1em;
 }
