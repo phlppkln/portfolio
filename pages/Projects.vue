@@ -33,11 +33,11 @@
       <NuxtLink to="/projects/TypingStars">
       <TheBaseCard
         :imageSrc="`https://picsum.photos/200/300?random=${i}`"
-        imageAlt="TypingStars Logo"
-        cardTitle="TypingStars"
+        imageAlt="Typing Stars Logo"
+        cardTitle="Typing Stars"
         cardDescription="Android app aimed at improving users' writing skills in a mobile
             gaming environment and to observe changes in typing behavior when
-            introducing error tolerance in such games."
+            introducing fault tolerance in mobile typing games."
       /></NuxtLink>
     </div>
   </div>
