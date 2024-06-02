@@ -48,3 +48,15 @@ a{
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 1em;
 }
+
+.page-summary{
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid $primary;
+
+  .page-summary-tldr{
+    font-size: large;
+    font-weight: bolder;
+    color: $secondary;
+  }
+}
