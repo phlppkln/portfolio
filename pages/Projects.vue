@@ -2,27 +2,49 @@
   <div>
     <h1><i class="bi bi-projector"></i> Projects</h1>
     <p>
-      Playing around with code can be fun. Here you can find some experimental ideas and projects. No guarantees for how they look or what they do.
-      Things might be broken.
+      Here you'll find a selection of projects accumulated over the years that I've worked on.
     </p>
 
     <div class="projects-grid">
-      <TheBaseCard
-        v-for="i in 20"
-        :key="i"
-        :imageSrc="`https://picsum.photos/200/300?random=${i}`"
-        :imageAlt="`Project ${i}`"
-        :cardTitle="`Project ${i}`"
-        :cardDescription="`Project Description ${i}`"
+      <NuxtLink to="/projects/SeeMore">
+      <TheBaseCard 
+        :imageSrc="`https://picsum.photos/200/300?random=1`"
+        imageAlt="SeeMore"
+        cardTitle="SeeMore"
+        cardDescription="This is a description for SeeMore"
       />
+      </NuxtLink>
+      <NuxtLink to="/projects/DigDeeper">
+      <TheBaseCard
+        :imageSrc="`https://picsum.photos/200/300?random=${i}`"
+        imageAlt="DigDeeper Logo"
+        cardTitle="DigDeeper"
+        cardDescription="DigDeeper"
+      />
+      </NuxtLink>
+      <NuxtLink to="/projects/OSA">
+      <TheBaseCard
+        :imageSrc="`https://picsum.photos/200/300?random=${i}`"
+        imageAlt="OSA Logo"
+        cardTitle="OSA"
+        cardDescription="OSA"
+      />
+      </NuxtLink>
+      <NuxtLink to="/projects/TypingStars">
+      <TheBaseCard
+        :imageSrc="`https://picsum.photos/200/300?random=${i}`"
+        imageAlt="TypingStars Logo"
+        cardTitle="TypingStars"
+        cardDescription="Android app aimed at improving users' writing skills in a mobile
+            gaming environment and to observe changes in typing behavior when
+            introducing error tolerance in such games."
+      /></NuxtLink>
     </div>
   </div>
 </template>
 
-<script>
-export default {
+<script setup lang="ts">
 
-}
 </script>
 
 <style scoped lang="scss">

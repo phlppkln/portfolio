@@ -5,20 +5,29 @@
     </div>
     <div class="card-title text">{{ cardTitle }}</div>
     <div class="card-text text">{{ cardDescription }}</div>
+    <div class="tags-container">
+      <div class="tag">web</div>
+      <div class="tag">design</div>
+
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, defineProps, toRefs } from "vue";
 
-const props = defineProps([
-  "imageSrc",
-  "imageAlt",
-  "cardTitle",
-  "cardDescription",
-  "hrefLink",
-]);
-const { imageSrc, imageAlt, cardTitle, cardDescription, hrefLink } = toRefs(props);
+const props = defineProps({
+  imageSrc: String,
+  imageAlt: String,
+  cardTitle: String,
+  cardDescription: String,
+  tags: Array,
+});
+const { imageSrc, imageAlt, cardTitle, cardDescription, tags } = toRefs(props);
+
+const unpackTags = () => {
+  
+}
 </script>
 
 <style scoped lang="scss">
@@ -46,8 +55,6 @@ const { imageSrc, imageAlt, cardTitle, cardDescription, hrefLink } = toRefs(prop
 .card:hover {
   background-color: $secondary;
   color: $background;
-  font-weight: bolder;
-  text-decoration: underline;
   border: 8px solid $primary;
 
   .image-container {
