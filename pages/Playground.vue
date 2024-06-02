@@ -7,14 +7,6 @@
     </p>
 
     <div class="projects-grid">
-      <TheBaseCard
-        v-for="i in 20"
-        :key="i"
-        :imageSrc="`https://picsum.photos/200/300?random=${i}`"
-        :imageAlt="`Project ${i}`"
-        :cardTitle="`Project ${i}`"
-        :cardDescription="`Project Description ${i}`"
-      />
     </div>
   </div>
 </template>
