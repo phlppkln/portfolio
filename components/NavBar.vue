@@ -6,16 +6,16 @@
       </div>
       <div class="navbar-nav" :class="{ 'nav-collapsed': isCollapsed }">
         <NuxtLink to="/">
-          <div class="nav-link">Home</div>
+          <div class="nav-link"><i class="bi bi-house"></i> Home</div>
         </NuxtLink>
         <NuxtLink to="/projects">
-          <div class="nav-link">Projects</div>
+          <div class="nav-link"><i class="bi bi-projector"></i> Projects</div>
         </NuxtLink>
         <NuxtLink to="/playground">
-          <div class="nav-link">Playground</div>
+          <div class="nav-link"><i class="bi bi-joystick"></i> Playground</div>
         </NuxtLink>
         <NuxtLink to="/about">
-          <div class="nav-link">About</div>
+          <div class="nav-link"><i class="bi bi-file-person"></i> About</div>
         </NuxtLink>
       </div>
     </div>
@@ -35,8 +35,8 @@ const toggleNavBar = () => {
 <style scoped lang="scss">
 .nav-bar-container { 
   display: flex;
-  align-items: right;
-  justify-content: right;
+  align-items: center;
+  justify-content: center;
   border-bottom: 4px solid $primary;
 }
 
@@ -122,8 +122,9 @@ const toggleNavBar = () => {
   padding: 1em;
   color: black;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.5rem;
   text-decoration: none;
+  margin: 0rem 1rem 0rem 1rem;
 
   &:hover {
     cursor: pointer;

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Reimagining Design</h1>
-    <div class="subtitle">
+    <div class="h1-subtitle">
       Exploring the Potential of the Infinite Canvas for the Design of
       Interactive Articles
     </div>
@@ -120,7 +120,9 @@
         werden kann.
       </p>
     </div>
-
+    <div class="row">
+      <a href="https://repositum.tuwien.at/handle/20.500.12708/188311" target="_blank">Download the thesis</a>
+    </div>
     <h2>Motivation</h2>
     <p>Motivation here</p>
 
@@ -173,13 +175,6 @@ const changeLanguage = (languageClicked?: string) => {
 </script>
 
 <style scoped lang="scss">
-.subtitle {
-  font-style: italic;
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  margin-top: 0em;
-}
-
 .language-slider {
   display: flex;
   flex-direction: row;

@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <h1><i class="bi bi-projector"></i> Projects</h1>
-    <p>
+  <div class="container">
+    <div class="row projects-playground-intro">
       Here you'll find a selection of projects that I've worked on over the
       years.
-    </p>
-
+</div>
     <div class="projects-grid">
       <TheBaseCard
         linkTo="/projects/reimaginingDesign"
@@ -27,6 +25,7 @@
         imageAlt="SeeMore"
         cardTitle="SeeMore"
         cardDescription="This is a description for SeeMore"
+        v-if="false"
       />
       <TheBaseCard
         linkTo="/projects/TypingStars"
@@ -35,6 +34,7 @@
         cardTitle="Typing Stars"
         cardDescription="Mobile game aimed at improving writing skills and to observe typing behavior changes when
             introducing fault tolerance."
+        v-if="false"
       />
     </div>
   </div>

@@ -2,8 +2,7 @@
   <div class="container">
     <h1>Online Self Assessment (OSA)</h1>
     <div class="information-container">
-      The project language is German, thus this page is in German as well. For
-      now.
+      The project language is German, thus most of the content of this page is in German as well.
     </div>
     <div class="page-summary">
       <div class="page-summary-tldr">tl;dr</div>
@@ -16,6 +15,11 @@
       interaktive Aufgaben und Informationsmaterialien lernen Sie Inhalte aus
       einem Studium kennen und werden dadurch einen ersten Einblick in
       verschiedene Bereiche erhalten.
+    </div>
+
+
+    <div class="row">
+      
     </div>
   </div>
 </template>
