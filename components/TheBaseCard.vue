@@ -10,9 +10,11 @@
         <div class="card-body">
           <div class="card-title text">{{ cardTitle }}</div>
           <div class="card-text text">{{ cardDescription }}</div>
-          <div class="tags-container" v-if="false">
-            <div class="tag">web</div>
-            <div class="tag">design</div>
+          <div class="card-time">{{ timeRange }}</div>
+          <div class="tags-container">
+            <div class="tag" v-for="tag in tags">
+              <UBadge color="red" variant="solid">{{ tag }}</UBadge>
+            </div>
           </div>
         </div>
       </div>
@@ -44,12 +46,25 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  tags: {
+  timeRange: {
     type: String,
     required: false,
   },
+  tags: {
+    type: Array,
+    required: false,
+    default: null,
+  },
 });
-const { imageSrc, imageAlt, cardTitle, cardDescription, tags } = toRefs(props);
+const { imageSrc, imageAlt, cardTitle, cardDescription, timeRange, tags } = toRefs(props);
+
+const getTags = () => {
+  if (tags.value) {
+    console.log(tags.value);
+  }
+  return tags;
+}
+
 </script>
 
 <style scoped lang="scss">
@@ -61,13 +76,12 @@ const { imageSrc, imageAlt, cardTitle, cardDescription, tags } = toRefs(props);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25rem;
-  height: 25rem;
   cursor: pointer;
   outline: 2px solid $primary;
   border: 1px solid $primary;
   text-decoration: none;
   border-radius: 0rem;
+  margin: 0rem 0rem 5rem 0rem;
 
   .image-container {
     width: 100%;
@@ -107,5 +121,28 @@ const { imageSrc, imageAlt, cardTitle, cardDescription, tags } = toRefs(props);
   .card-title{
     text-decoration: underline;
   }
+}
+
+.card-time{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: grey;
+  margin-top: 1rem;
+  border-top: 1px solid black;
+}
+
+.tags-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 1rem 1rem 1rem;
+}
+.tag{
+  margin: 0.1rem;
 }
 </style>
