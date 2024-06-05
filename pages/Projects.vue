@@ -4,29 +4,37 @@
       Here you'll find a selection of projects that I've worked on over the
       years.
 </div>
-    <div class="projects-grid">
+    <div class="projects-grid row">
+      <div class="col-md-6 col-sm-12 col-xl-4">
       <TheBaseCard
         linkTo="/projects/reimaginingDesign"
-        imageSrc=""
+        imageSrc="/img/reimagining-design/infinite_canvas_3d-space.png"
         imageAlt="Reimagining Design"
         cardTitle="Reimagining Design"
         cardDescription="Master thesis exploring the potential of the infinite canvas for the design of interactive articles."
-      />
+        timeRange="2022-current"
+        :tags='["web development", "react", "research", "d3.js", "information visualization", "miro", "collaboration", "design thinking"]'
+        /></div>
+      <div class="col-md-6 col-sm-12 col-xl-4">
       <TheBaseCard
         linkTo="/projects/OSA"
         imageSrc="/img/osa/osa_logo.png"
         imageAlt="OSA Logo"
         cardTitle="Online Self Assessment (OSA)"
         cardDescription="Web platform assisting in the selection of a study program. The goal is to promote self-reflection by exploring interests and abilities through interactive tasks and information of various study-relevant topics."
-      />
+        timeRange="2020-current"
+        :tags='["web development", "vue.js", "research", "ux", "ui", "information visualization", "interaction design", "e-learning"]'
+        /></div>
+      <div class="col-md-6 col-sm-12 col-xl-4">
       <TheBaseCard
         linkTo="/projects/SeeMore"
         imageSrc="/img/seeMore/seemore_logo_transp.png"
         imageAlt="SeeMore"
         cardTitle="SeeMore"
         cardDescription="This is a description for SeeMore"
-        v-if="false"
-      />
+        timeRange="2020 - 2021"
+        :tags='["design thinking", "interaction design", "user research"]'
+      /></div>
       <TheBaseCard
         linkTo="/projects/TypingStars"
         imageSrc="/img/typing-stars/typing_stars_logo.png"
@@ -42,4 +50,8 @@
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container{
+  @include fadein1s-cubic-bezier;
+}
+</style>
