@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Online Self Assessment (OSA)</h1>
     <div class="information-container">
-      The project language is German, thus most of the content of this page is in German as well.
+      The project language is German, thus the content of this page is in German as well.
     </div>
     <div class="page-summary">
       <div class="page-summary-tldr">tl;dr</div>
@@ -17,7 +17,10 @@
       verschiedene Bereiche erhalten.
     </div>
 
-
+    <TheBaseProjectInfo
+      role="Development, Design, Research"
+      timeRange="2023-current"
+    />
     <div class="row">
       
     </div>
