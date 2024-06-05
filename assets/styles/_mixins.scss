@@ -1,0 +1,35 @@
+@mixin fadein1s{
+    animation: fadein 1s linear forwards;
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin fadein4s{
+    animation: fadein 4s linear forwards;
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin fadein1s-cubic-bezier{
+    animation: fadein 1s cubic-bezier(0.1, 0.5, 0.7, 0.8) forwards;
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
