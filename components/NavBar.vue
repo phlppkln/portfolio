@@ -5,15 +5,15 @@
         <div :class="{ 'toggler-icon': true, 'toggler-icon-collapsed': isCollapsed }"></div>
       </div>
       <div class="navbar-nav" :class="{ 'nav-collapsed': isCollapsed }">
-        <NuxtLink to="/">
+        <!--<NuxtLink to="/">
           <div class="nav-link"><i class="bi bi-house"></i> Home</div>
-        </NuxtLink>
+        </NuxtLink>-->
         <NuxtLink to="/projects">
           <div class="nav-link"><i class="bi bi-projector"></i> Projects</div>
         </NuxtLink>
-        <NuxtLink to="/playground">
+        <!--<NuxtLink to="/playground">
           <div class="nav-link"><i class="bi bi-joystick"></i> Playground</div>
-        </NuxtLink>
+        </NuxtLink>-->
         <NuxtLink to="/about">
           <div class="nav-link"><i class="bi bi-file-person"></i> About</div>
         </NuxtLink>
