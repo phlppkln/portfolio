@@ -134,20 +134,19 @@
         <ul>
           <li>
             <i class="bi bi-envelope"></i>
-            <a href="mailto:klein.philipp@posteo.at">klein.philipp@posteo.at</a>
+            <a href="mailto:klein.philipp@posteo.at"> klein.philipp@posteo.at</a>
           </li>
-          TODO: linkedin
           <li>
             <i class="bi bi-linkedin"></i>
             <a
               href="https://www.linkedin.com/in/philipp-klein-5a98261b1/"
               target="_blank"
-              >philippklein</a
+              > philippklein</a
             >
           </li>
           <li>
             <i class="bi bi-github"></i>
-            <a href="https://github.com/phlppkln" target="_blank">phlppkln</a>
+            <a href="https://github.com/phlppkln" target="_blank"> phlppkln</a>
           </li>
         </ul>
       </div>
