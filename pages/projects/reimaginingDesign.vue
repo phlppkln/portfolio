@@ -19,9 +19,9 @@
 
     <TheBaseProjectInfo
       role="Development, Design, Research"
-      timeRange="2023-current"
+      timeRange="2022-current"
     />
-<!--     <h2 v-if="language == 'en'">Abstract</h2>
+    <!--     <h2 v-if="language == 'en'">Abstract</h2>
     <h2 v-if="false">Kurzfassung</h2>
     <div class="slider-container" v-if="false">
       <div class="language-slider">
@@ -33,61 +33,73 @@
       </div>
     </div> -->
     <div v-if="language == 'en'" class="abstract">
-      <div class="abstract-header"  @click="showAbstract()">
-      <h2>Abstract <i class="bi bi-arrow-right-square-fill" :class="{ 'abstractExtended': true, turnAround: abstractExtended }"></i> </h2></div>
-      <div class="abstract-text" :class="{ 'abstractExtended': true, extendDown: abstractExtended }" v-if="abstractExtended">
-          <p>
-            As digital technology continues to reshape communication and content
-            consumption, collaboration and collective ideation have become
-            fundamental to modern web technologies. Interactive articles aim to
-            encourage active information exploration to foster knowledge
-            creation. However, the integration of collaboration and tools like
-            the infinite canvas remains unexplored in this context.
-          </p>
-          <p>
-            This thesis investigates the opportunities and limitations of this
-            area. It presents a exploration of the infinite canvas and examines
-            its strengths and challenges for collaborative interactive articles.
-            Through the design and implementation of an application built for
-            Miro, a web-based platform utilizing the infinite canvas for
-            creative collaboration, it investigates the design process for the
-            infinite canvas. In a thinking-aloud user study, this thesis
-            evaluates this application and its integration in this environment.
-          </p>
-          <p>
-            This revealed that the infinite canvas offers an immersive virtual
-            space, though collaborative artifact design introduces unique
-            challenges. The distinction between shared and individual artifacts
-            underscores the importance of considering the collaborative artifact
-            space. Providing a clear user experience proved to be crucial,
-            especially for inexperienced users. Tasks and input methods for
-            end-users need to be kept simple.
-          </p>
+      <div class="abstract-header" @click="showAbstract()">
+        <h2 style="
+  padding-top: 0rem !important;">
+          Abstract
+          <i
+            class="bi bi-arrow-right-square-fill"
+            :class="{ abstractExtended: true, turnAround: abstractExtended }"
+          ></i>
+        </h2>
+      </div>
+      <div
+        class="abstract-text"
+        :class="{ abstractExtended: true, extendDown: abstractExtended }"
+        v-if="abstractExtended"
+      >
+        <p>
+          As digital technology continues to reshape communication and content
+          consumption, collaboration and collective ideation have become
+          fundamental to modern web technologies. Interactive articles aim to
+          encourage active information exploration to foster knowledge creation.
+          However, the integration of collaboration and tools like the infinite
+          canvas remains unexplored in this context.
+        </p>
+        <p>
+          This thesis investigates the opportunities and limitations of this
+          area. It presents a exploration of the infinite canvas and examines
+          its strengths and challenges for collaborative interactive articles.
+          Through the design and implementation of an application built for
+          Miro, a web-based platform utilizing the infinite canvas for creative
+          collaboration, it investigates the design process for the infinite
+          canvas. In a thinking-aloud user study, this thesis evaluates this
+          application and its integration in this environment.
+        </p>
+        <p>
+          This revealed that the infinite canvas offers an immersive virtual
+          space, though collaborative artifact design introduces unique
+          challenges. The distinction between shared and individual artifacts
+          underscores the importance of considering the collaborative artifact
+          space. Providing a clear user experience proved to be crucial,
+          especially for inexperienced users. Tasks and input methods for
+          end-users need to be kept simple.
+        </p>
 
-          <p>
-            This thesis identifies two distinct user roles for the design of
-            collaborative interactive articles: facilitators who guide group
-            activities and participants who seek insights. It adopts the idea of
-            Gamestorming as a framework for goal-driven collaboration to
-            facilitate group work and provide engaging activities. Combined with
-            semantic information present on an infinite canvas, this opens up
-            further use cases.
-          </p>
-          <p>
-            Moreover, information visualization techniques highlight
-            possibilities to create engaging and interactive artifacts on the
-            infinite canvas. In the context of visual analytics, the infinite
-            canvas acts as a dynamic visual database, enabling direct
-            interaction with data entities and relationships. Consequently,
-            information visualizations can provide an overview of the infinite
-            canvas and enhance the exploration of content.
-          </p>
-          <p>
-            In the end, this thesis contributes to the collaborative and
-            interactive potential of the infinite canvas, offering insights for
-            the design of interactive articles and explorable visualizations.
-          </p>
-        </div>
+        <p>
+          This thesis identifies two distinct user roles for the design of
+          collaborative interactive articles: facilitators who guide group
+          activities and participants who seek insights. It adopts the idea of
+          Gamestorming as a framework for goal-driven collaboration to
+          facilitate group work and provide engaging activities. Combined with
+          semantic information present on an infinite canvas, this opens up
+          further use cases.
+        </p>
+        <p>
+          Moreover, information visualization techniques highlight possibilities
+          to create engaging and interactive artifacts on the infinite canvas.
+          In the context of visual analytics, the infinite canvas acts as a
+          dynamic visual database, enabling direct interaction with data
+          entities and relationships. Consequently, information visualizations
+          can provide an overview of the infinite canvas and enhance the
+          exploration of content.
+        </p>
+        <p>
+          In the end, this thesis contributes to the collaborative and
+          interactive potential of the infinite canvas, offering insights for
+          the design of interactive articles and explorable visualizations.
+        </p>
+      </div>
     </div>
     <div v-if="language == 'de'">
       <p>
@@ -229,20 +241,55 @@
       perspectives with Gamestorming (Gray et al., 2010) as a framework, show
       potential in facilitating more direct collaboration.
     </p>
-
-    <h2>Gallery</h2>
-    <NuxtImg class="image" src="/img/reimagining-design/app_flow.jpg" />
-    <NuxtImg class="image" src="/img/reimagining-design/miro_va_system_updated.jpg" />
-
+    <div class="row image-gallery-container">
+      <div class="col-md-5 col-xl-6 col-sm-12">
+        <NuxtImg class="image" src="/img/reimagining-design/app_flow.jpg" />
+      </div>
+      <div class="col-md-5 col-xl-6 col-sm-12">
+        <NuxtImg
+          class="image"
+          src="/img/reimagining-design/miro_va_system_updated.jpg"
+        />
+      </div>
+    </div>
     <h2>Future Work</h2>
     <p>
-      First tests of a refined application, built on the results from the previous steps, show promising results 
-      for building a semantic space from the data created from collaboration on the infinite canvas. 
-      Through clustering it is possible to explore this semantic space.
+      First tests of a refined application, built on the results from the
+      previous steps, show promising results for building a semantic space from
+      the data created from collaboration on the infinite canvas. Through
+      clustering it is possible to explore this semantic space.
     </p>
-    <NuxtImg class="image" src="/img/reimagining-design/refined_prototype_design_finished_notes.png" />
-    <NuxtImg class="image" src="/img/reimagining-design/refined_prototype_design_start_clustering.png" />
-    <NuxtImg class="image" src="/img/reimagining-design/refined_prototype_design_finished_clustering.png" />
+
+    
+    <div class="row image-gallery-container">
+      <div class="col-md-5 col-xl-6 col-sm-12"><NuxtImg
+      class="image"
+      src="/img/reimagining-design/refined_prototype_design_finished_notes.png"
+    />
+        </div>
+    <div class="col-md-5 col-xl-5 col-sm-12 image-description">
+      <p>Through annotating images in Miro participants create a semantic space.</p>
+    </div>
+      <div class="col-md-5 col-xl-6 col-sm-12"> <NuxtImg
+      class="image"
+      src="/img/reimagining-design/refined_prototype_design_start_clustering.png"
+    />
+        </div>
+    <div class="col-md-5 col-xl-5 col-sm-12 image-description">
+      <p>These notes are then used to cluster images based on their semantic similarity. Participants have to find those clusters in groups or individually. This allows them to reflect upon the similarity between the images and find hidden patterns.</p>
+    </div>
+        <div class="col-md-5 col-xl-6 col-sm-12"><NuxtImg
+      class="image"
+      src="/img/reimagining-design/refined_prototype_design_finished_clustering.png"
+    /></div>
+    
+    <div class="col-md-5 col-xl-5 col-sm-12 image-description">
+      <p>In the end, it is possible to explore the semantic space. For example, it is possible to show the first two words of the semantic space that no participant has entered. This allows them to further reflect on the similarity between the images.</p>
+    </div>
+    </div>
+    
+   
+    
 
     <h2>Awards</h2>
     <ul>
@@ -397,7 +444,7 @@ const abstractItem = [
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 1rem $secondary;
-  p{
+  p {
     color: white;
   }
 }
@@ -444,16 +491,15 @@ const abstractItem = [
   transform: translateX(100%);
 }
 
-.abstract-header{
-  cursor:pointer;
-  h2{
+.abstract-header {
+  cursor: pointer;
+  h2 {
     color: $background !important;
   }
-  &:hover{
-    background-color:$primary;
-    h2{
-    text-decoration: underline $secondary 0.5rem;
-
+  &:hover {
+    background-color: $primary;
+    h2 {
+      text-decoration: underline $secondary 0.5rem;
     }
   }
 }
@@ -483,4 +529,21 @@ const abstractItem = [
     }
   }
 }
+
+.image-gallery-container{
+  display: flex;
+  align-items: center;
+}
+.image{
+  width: 100%;
+  height: auto;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem $secondary;
+  border: 0.3rem solid $primary;
+}
+.image-description{
+  padding: 2rem;
+}
+
 </style>
