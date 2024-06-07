@@ -60,25 +60,25 @@
         <ul>
           <li class="li-main">Freelance Web Developer</li>
           <ul>
-            <li>Technische Universität Wien (2024 - current)</li>
+            <li>Technische Universität Wien (04/2024 - current)</li>
           </ul>
           <li class="li-main">
             Student employee in research and administration
           </li>
           <ul>
-            <li>Technische Universität Wien (2020 - 2023)</li>
+            <li>Technische Universität Wien (09/2020 - 07/2023)</li>
           </ul>
           <li class="li-main">Scientific employee for digitization</li>
           <ul>
-            <li>Wiener Linien (2019 - 2020)</li>
+            <li>Wiener Linien (05/2019 - 05/2020)</li>
           </ul>
           <li class="li-main">
             Tutor <em>"Interface and Interaction Design"</em>
           </li>
           <ul>
-            <li>Technische Universität Wien (2019 - 2020)</li>
-            <li>Technische Universität Wien (2018 - 2019)</li>
-            <li>Technische Universität Wien (2017 - 2018)</li>
+            <li>Technische Universität Wien (10/2019 - 02/2020)</li>
+            <li>Technische Universität Wien (10/2018 - 02/2019)</li>
+            <li>Technische Universität Wien (10/2017 - 02/2018)</li>
           </ul>
         </ul>
       </div>
