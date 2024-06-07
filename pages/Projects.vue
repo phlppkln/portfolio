@@ -31,7 +31,8 @@
         imageSrc="/img/seeMore/seemore_logo_transp.png"
         imageAlt="SeeMore"
         cardTitle="SeeMore"
-        cardDescription="This is a description for SeeMore"
+        cardDescription="Project aiming to motivate urban citizens to
+        spend more time in nature to experience their surrounding more consciously."
         timeRange="2020 - 2021"
         :tags='["design thinking", "interaction design", "user research"]'
       /></div>

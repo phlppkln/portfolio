@@ -110,10 +110,8 @@
           <li>Vue.js | Nuxt</li>
           <li>React | Next</li>
           <li>Javascript | Typescript</li>
-          <li>REST</li>
           <li>Figma</li>
           <li>Miro</li>
-          <li>Docker</li>
           <li>Adobe CC</li>
         </ul>
       </div>

@@ -317,7 +317,7 @@
       <li>React | Next</li>
       <li>Typescript</li>
       <li>D3.js</li>
-      <li>REST</li>
+      <li>VS Code</li>
     </ul>
 
     <h2>Links and Resources</h2>

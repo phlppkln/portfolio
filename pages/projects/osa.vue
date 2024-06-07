@@ -87,6 +87,17 @@
           <NuxtImg class="image" src="/img/osa/mit_sicherheit_assign2.png" />
         </div>
       </div>
+      <h2>Tools and Languages</h2>
+    <ul>
+      <li>Vue.js</li>
+      <li>Strapi</li>
+      <li>Javascript</li>
+      <li>D3.js</li>
+      <li>Chart.js</li>
+      <li>Figma</li>
+      <li>VS Code</li>
+    </ul>
+
     </div>
   </div>
 </template>
