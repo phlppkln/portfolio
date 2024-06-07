@@ -1,35 +1,32 @@
 <template>
   <div class="container">
-    <div class="row" id="nav-bar">
-      <NavBar></NavBar>
+    <NavBar id="navbar"></NavBar>
+    <div id="content">
+      <NuxtPage></NuxtPage>
     </div>
-    <NuxtPage id="content"/>
-    <div class="row" id="footer">
-      <Footer></Footer>
-    </div>
+    <Footer id="footer"></Footer>
   </div>
 </template>
 
 <script lang="ts">
-
 export default {
-  name: 'App',
+  name: "App",
 };
-
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .container {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
+  @include fadein1s-cubic-bezier;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
 #content {
-    flex: 1;
-}
-
-#footer {
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  flex: 1 0 auto;
 }
 </style>

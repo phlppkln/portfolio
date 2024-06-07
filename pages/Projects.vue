@@ -5,7 +5,7 @@
       years.
     </div>
     <div class="projects-grid row">
-      <div class="col col-md-5" ref="cardReimaginingDesignRef">
+      <div class="col-xl-3 col-md-5 col-sm-12" ref="cardReimaginingDesignRef">
         <TheBaseCard
           linkTo="/projects/reimaginingDesign"
           imageSrc="/img/reimagining-design/infinite_canvas_3d-space.png"
@@ -26,7 +26,7 @@
           :cardHeight="cardMaxHeight"
         />
       </div>
-      <div class="col col-md-5" ref="cardOSARef">
+      <div class="col-xl-3 col-md-5 col-sm-12" ref="cardOSARef">
         <TheBaseCard
           linkTo="/projects/OSA"
           imageSrc="/img/osa/osa_logo.png"
@@ -47,7 +47,7 @@
           :cardHeight="cardMaxHeight"
         />
       </div>
-      <div class="col col-md-5" ref="cardSeeMoreRef">
+      <div class="col-xl-3 col-md-5 col-sm-12" ref="cardSeeMoreRef">
         <TheBaseCard
           linkTo="/projects/SeeMore"
           imageSrc="/img/seeMore/seemore_logo_transp.png"
