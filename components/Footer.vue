@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="footer-text">
-      <div class="footer-text-item">Made with ❤️ by</div>
+      <div class="footer-text-item">Created with Nuxt by</div>
       <div class="footer-text-item">Philipp Klein</div>
     </div>
     <div class="footer-text">
