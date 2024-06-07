@@ -107,7 +107,7 @@
       <div class="col-md-6">
         <h2>Tools and Languages</h2>
         <ul>
-          <li>Vue.js | Nuxt <i class="bi bi-heart-fill"></i></li>
+          <li>Vue.js | Nuxt</li>
           <li>React | Next</li>
           <li>Javascript | Typescript</li>
           <li>REST</li>
@@ -148,13 +148,6 @@
             <i class="bi bi-github"></i>
             <a href="https://github.com/phlppkln" target="_blank"> phlppkln</a>
           </li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <h2>Other Skills and Education</h2>
-        <ul>
-          <li>Facharbeiter Landwirtschaft</li>
-          <li>Facharbeiter Weinbau und Kellerwirtschaft</li>
         </ul>
       </div>
     </div>

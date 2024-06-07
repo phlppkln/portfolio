@@ -4,6 +4,9 @@
       <NavBar></NavBar>
     </div>
     <NuxtPage />
+    <div class="row" id="footer">
+      <Footer></Footer>
+    </div>
   </div>
 </template>
 
