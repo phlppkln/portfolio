@@ -12,7 +12,7 @@
           imageAlt="Reimagining Design"
           cardTitle="Reimagining Design"
           cardDescription="Master thesis exploring the potential of the infinite canvas for the design of interactive articles."
-          timeRange="2022-current"
+          timeRange="2021-current"
           :tags="[
             'web development',
             'react',
