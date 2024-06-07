@@ -54,10 +54,10 @@
     </p>
     <div class="row image-gallery-container">
       <div class="col-md-5 col-xl-6 col-sm-12">
-        <NuxtImg class="image" src="/img/seemore/cp_facebook_post.jpg" />
+        <NuxtImg class="image" src="/img/seeMore/cp_facebook_post.jpg" />
       </div>
       <div class="col-md-5 col-xl-6 col-sm-12">
-        <NuxtImg class="image" src="/img/seemore/dg_box1.jpg" />
+        <NuxtImg class="image" src="/img/seeMore/dg_box1.jpg" />
       </div>
 <!--       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
@@ -107,25 +107,25 @@
       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
           class="image"
-          src="/img/seemore/seeexplorer_start.png"
+          src="/img/seeMore/seeexplorer_start.png"
         />
       </div>
       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
           class="image"
-          src="/img/seemore/seeexplorer_home.png"
+          src="/img/seeMore/seeexplorer_home.png"
         />
       </div>
       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
           class="image"
-          src="/img/seemore/seeexplorer_map.png"
+          src="/img/seeMore/seeexplorer_map.png"
         />
       </div>
       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
           class="image"
-          src="/img/seemore/seeexplorer_activity.png"
+          src="/img/seeMore/seeexplorer_activity.png"
         />
       </div>
     </div>
@@ -141,13 +141,13 @@
       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
           class="image"
-          src="/img/seemore/seeexplorer1.jpg"
+          src="/img/seeMore/seeexplorer1.jpg"
         />
       </div>
       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
           class="image"
-          src="/img/seemore/seecube2.jpg"
+          src="/img/seeMore/seecube2.jpg"
         />
       </div>
     </div>
