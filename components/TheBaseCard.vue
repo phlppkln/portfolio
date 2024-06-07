@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <NuxtLink class="link" :to="linkTo">
-      <div class="card">
+      <div class="card" ref="card">
         <div class="image-container">
           <div class="image">
             <NuxtImg class="image" :src="imageSrc" :alt="imageAlt" height="200" />
@@ -55,15 +55,31 @@ const props = defineProps({
     required: false,
     default: null,
   },
-});
-const { imageSrc, imageAlt, cardTitle, cardDescription, timeRange, tags } = toRefs(props);
-
-const getTags = () => {
-  if (tags.value) {
-    console.log(tags.value);
+  cardHeight: {
+    type: Number || String,
+    required: false,
+    default: 'auto'
   }
-  return tags;
-}
+});
+const { imageSrc, imageAlt, cardTitle, cardDescription, timeRange, tags, cardHeight } = toRefs(props);
+
+const card: Ref<HTMLElement | null> = ref(null);
+
+
+const setCardHeight = () => {
+  console.log(cardHeight.value);
+
+  if(card.value) {
+    if(cardHeight.value == 0){
+    card.value.style.height = "auto";
+  }
+  else{
+    card.value.style.height = cardHeight.value+'px';
+  }
+  }
+};
+
+watch(() => cardHeight.value, setCardHeight);
 
 </script>
 
@@ -81,7 +97,7 @@ const getTags = () => {
   border: 1px solid $primary;
   text-decoration: none;
   border-radius: 0rem;
-  margin: 0rem 0rem 5rem 0rem;
+
 
   .image-container {
     width: 100%;

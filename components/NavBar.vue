@@ -137,6 +137,7 @@ a {
 
   &:hover {
     border-top: 0.2em solid $secondary;
+    background-color: $background !important;
   }
 
   &.router-link-active {

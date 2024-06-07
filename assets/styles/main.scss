@@ -57,15 +57,16 @@ li {
   padding: 0.2rem;
 }
 
-a:hover {
-  color: $secondary;
-}
-
 a {
   text-decoration: underline;
   color: $primary !important;
   font-weight: 600;
   font-family: 'Courier New', Courier, monospace;
+
+  &:hover {
+    color: $secondary !important;
+    background-color: aqua;
+  }
 }
 
 .projects-playground-intro{
