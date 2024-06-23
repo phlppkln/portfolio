@@ -11,9 +11,9 @@
         <NuxtLink to="/projects">
           <div class="nav-link"><i class="bi bi-projector"></i> Projects</div>
         </NuxtLink>
-        <!--<NuxtLink to="/playground">
+        <NuxtLink to="/playground">
           <div class="nav-link"><i class="bi bi-joystick"></i> Playground</div>
-        </NuxtLink>-->
+        </NuxtLink>
         <NuxtLink to="/about">
           <div class="nav-link"><i class="bi bi-file-person"></i> About</div>
         </NuxtLink>
@@ -25,6 +25,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+
 const isCollapsed = ref(true);
 
 const toggleNavBar = () => {

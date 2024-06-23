@@ -1,3 +1,4 @@
+
 <template>
   <div class="container row">
     <div class="row projects-playground-intro">
@@ -8,17 +9,24 @@
     
       <TheBaseCard
         linkTo="/playground/three"
-        imageSrc=""
         imageAlt="Three.js Experiments"
         cardTitle="Three.js Experiments"
         cardDescription="Exploring the possibilities of Three.js."
+        :cardHeight=0
+      />
+
+      <TheBaseCard
+        linkTo="/playground/d3"
+        imageAlt="D3.js Experiments"
+        cardTitle="D3.js Experiments"
+        cardDescription="Exploring the possibilities of D3.js."
+        :cardHeight=0
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import TheBaseCard from "~/components/TheBaseCard.vue";
 
 </script>
 

@@ -4,7 +4,11 @@
       <div class="card" ref="card">
         <div class="image-container">
           <div class="image">
-            <NuxtImg class="image" :src="imageSrc" :alt="imageAlt" height="200" />
+            <div v-if="imageSrc">
+            <NuxtImg class="image" :src="imageSrc" :alt="imageAlt" height="200" /></div>
+          <div v-else>
+            <div class="image-placeholder" height="200"></div>
+          </div>
         </div>
         </div>
         <div class="card-body">
@@ -23,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, defineProps, toRefs } from "vue";
+import { ref, onMounted, toRefs } from "vue";
 
 const props = defineProps({
   linkTo: {
@@ -32,7 +36,7 @@ const props = defineProps({
   },
   imageSrc: {
     type: String,
-    required: true,
+    required: false,
   },
   imageAlt: {
     type: String,
