@@ -1,75 +1,22 @@
-# Nuxt 3 Minimal Starter
+# README
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Repository for my personal portfolio page.
+Built with [Nuxt](https://nuxt.com), [Typescript](https://www.typescriptlang.org/), and [SCSS](https://sass-lang.com). Layout with [Bootstrap](https://getbootstrap.com) and Icons from [Bootstrap Icons](https://icons.getbootstrap.com).
 
-## Setup
+## Styling
+Fonts: 
+ - Headers: https://fonts.googleapis.com/css2?family=Space+Grotesk
+ - Text: https://fonts.googleapis.com/css2?family=Lato
 
-Make sure to install the dependencies:
+Colors:
+ - Primary: rgb(8, 100, 94)
+ - Secondary: rgb(189, 67, 66)
+ - Background: rgb(241, 241, 241)
 
-```bash
-# npm
-npm install
+Deployed with [Vercel](https://vercel.com) at https://philippklein.at
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Libraries Installed in Project
+ - d3.js (https://d3js.org)
+ - p5.js (https://p5js.org)
+ - anime.js (https://animejs.com)
+ - three.js (https://threejs.org)
