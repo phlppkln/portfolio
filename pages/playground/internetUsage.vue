@@ -37,15 +37,16 @@ import type { NumberValue } from "d3";
 
 const chart = ref<HTMLElement | null>(null);
 
-const countries = ["United States", "Canada", "Mexico", "India"];
+const countries = ref([String]);
 
-const country = ref(countries[0]);
+const country = ref(countries.value[0]);
 watch(country, async () => {
   const data = await getData();
   updateChartData(data);
 });
 
 interface DataPoint {
+  Country: String;
   Value: NumberValue;
   Year: NumberValue;
 }
@@ -53,17 +54,17 @@ interface DataPoint {
 const dataSource = ref<DataPoint[]>([]);
 
 const getData = async () => {
-  const data = await d3.csv("/data/UNdata_Export_20240623_internet-usage.csv");
-
-  // extract data where "Country or Area" is selected country
-  const dataCountry = data.filter(
-    (d) => d["Country or Area"] === country.value
-  );
+  const data = await prepareData();
+  const dataCountry = data.get(country.value);
 
   // convert dataIndia.Value and dataIndia.Year from string to number and remove "Country or Area"
   let dataConverted: DataPoint[] = [];
+  if(dataCountry){
+
+  
   dataCountry.forEach((d) => {
     let dataPoint: DataPoint = {
+      Country: "",
       Value: 0,
       Year: 0,
     };
@@ -73,11 +74,33 @@ const getData = async () => {
   });
 
   dataSource.value = dataConverted;
-  return dataConverted;
+  return dataConverted;}
 };
 
+const prepareData = async () => {
+  const data = await d3.csv("/data/UNdata_Export_20240623_internet-usage.csv");
 
-const updateChartData = async (data) => {
+  // convert data to Datapoint interface
+  let dataConverted: DataPoint[] = [];
+  data.forEach((d) => {
+    let dataPoint: DataPoint = {
+      Country: "",
+      Value: 0,
+      Year: 0,
+    };
+    dataPoint.Country = d["Country or Area"];
+    dataPoint.Value = +d.Value;
+    dataPoint.Year = +d.Year;
+    dataConverted.push(dataPoint);
+  });
+
+  let groupedData = d3.group(dataConverted, (d) => d.Country);
+
+  countries.value= Array.from(groupedData.keys());
+  return groupedData;
+};
+
+const updateChartData = async (data: DataPoint[]) => {
   // Declare the chart dimensions and margins.
   const width = 928;
   const height = 500;
@@ -158,6 +181,262 @@ onMounted(async () => {
   const data = await getData();
   updateChartData(data);
 });
+
+const continentAfrica = [
+  "Angola",
+  "Algeria",
+  "Benin",
+  "Botswana",
+  "Burkina Faso",
+  "Burundi",
+  "Cameroon",
+  "Cabo Verde",
+  "Central African Republic",
+  "Chad",
+  "Comoros",
+  "Congo (Republic of the)",
+  "Côte d'Ivoire",
+  "Democratic Republic of the Congo",
+  "Djibouti",
+  "Egypt",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Eswatini",
+  "Ethiopia",
+  "Gabon",
+  "Gambia",
+  "Ghana",
+  "Guinea",
+  "Guinea-Bissau",
+  "Kenya",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Madagascar",
+  "Malawi",
+  "Mali",
+  "Mauritania",
+  "Mauritius",
+  "Mayotte",
+  "Morocco",
+  "Mozambique",
+  "Namibia",
+  "Niger",
+  "Nigeria",
+  "Reunion",
+  "Rwanda",
+  "Sao Tome and Principe",
+  "Senegal",
+  "Seychelles",
+  "Sierra Leone",
+  "Somalia",
+  "South Africa",
+  "South Sudan",
+  "Sudan",
+  "Swaziland",
+  "Tanzania",
+  "Togo",
+  "Tunisia",
+  "Uganda",
+  "Western Sahara",
+  "Zambia",
+  "Zimbabwe",
+]
+
+const continentEurope= [
+  "Albania",
+  "Andorra",
+  "Armenia",
+  "Austria",
+  "Azerbaijan",
+  "Belarus",
+  "Belgium",
+  "Bosnia and Herzegovina",
+  "Bulgaria",
+  "Croatia",
+  "Czech Republic",
+  "Denmark",
+  "Estonia",
+  "Faroe Islands",
+  "Finland",
+  "France",
+  "Germany",
+  "Gibralatar",
+  "Greece",
+  "Hungary",
+  "Iceland",
+  "Ireland",
+  "Italy",
+  "Latvia",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Malta",
+  "Moldova",
+  "Monaco",
+  "Montenegro",
+  "Netherlands",
+  "North Macedonia",
+  "Norway",
+  "Poland",
+  "Portugal",
+  "Romania",
+  "Russian Federation",
+  "San Marino",
+  "Serbia",
+  "Slovakia",
+  "Slovenia",
+  "Spain",
+  "Sweden",
+  "Switzerland",
+  "Ukraine",
+  "United Kingdom",
+  "Vatican",
+];
+
+const continentNorthernAmerica = [
+  "Bermuda",
+  "Canada",
+  "Greenland",
+  "Saint Pierre and Miquelon",
+  "United States",
+]
+
+const continentCentralAmerica = [
+  "Belize",
+  "Costa Rica",
+  "El Salvador",
+  "Guatemala",
+  "Honduras",
+  "Mexico",
+  "Nicaragua",
+  "Panama"
+];
+
+const continentCaribbean = [
+  "Anguilla",
+  "Antigua and Barbuda",
+  "Aruba",
+  "Bahamas",
+  "Barbados",
+  "British Virgin Islands",
+  "Cayman Islands",
+  "Cuba",
+  "Curacao",
+  "Dominica",
+  "Dominican Republic",
+  "Grenada",
+  "Guadeloupe",
+  "Haiti",
+  "Jamaica",
+  "Martinique",
+  "Montserrat",
+  "Puerto Rico",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent and the Grenadines",
+  "Trinidad and Tobago",
+  "Turks and Caicos Islands",
+  "United States Virgin Islands",
+]
+
+const continentSouthAmerica = [
+  "Argentina",
+  "Bolivia",
+  "Brazil",
+  "Chile",
+  "Colombia",
+  "Ecuador",
+  "Falkland (Malvinas) Islands",
+  "French Guiana",
+  "Guyana",
+  "Paraguay",
+  "Peru",
+  "Suriname",
+  "Uruguay",
+  "Venezuela",
+];
+
+const continentOceania = [
+  "Australia",
+  "Cook Islands",
+  "Fiji",
+  "French Polynesia",
+  "Guam",
+  "Kiribati",
+  "Marshall Islands",
+  "Micronesia",
+  "Nauru",
+  "New Caledonia",
+  "New Zealand",
+  "Niue",
+  "Northern Marianas",
+  "Palau",
+  "Papua New Guinea",
+  "Samoa",
+  "Solomon Islands",
+  "Tokelau",
+  "Tonga",
+  "Tuvalu",
+  "Vanuatu",
+  "Wallis and Futuna",
+];
+
+const continentAsia = [
+  "Afghanistan",
+  "Armenia",
+  "Azerbaijan",
+  "Bahrain",
+  "Bangladesh",
+  "Bhutan",
+  "Brunei Darussalam",
+  "Cambodia",
+  "China",
+  "China, Hong Kong Special Administrative Region",
+  "China, Macao Special Administrative Region",
+  "Cyprus",
+  "Democratic People's Republic of Korea",
+  "East Timor",
+  "Georgia",
+  "India",
+  "Indonesia",
+  "Iran (Islamic Republic of)",
+  "Iraq",
+  "Israel",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Korea (Republic of)",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Lao People's Democratic Republic",
+  "Lebanon",
+  "Malaysia",
+  "Maldives",
+  "Mongolia",
+  "Myanmar",
+  "Nepal",
+  "Oman",
+  "Pakistan",
+  "Philippines",
+  "Qatar",
+  "Russia",
+  "Saudi Arabia",
+  "Singapore",
+  "Sri Lanka",
+  "State of Palestine",
+  "Syrian Arab Republic",
+  "Tajikistan",
+  "Thailand",
+  "Timor-Leste",
+  "Türkiye",
+  "Turkmenistan",
+  "United Arab Emirates",
+  "Uzbekistan",
+  "Viet Nam",
+  "Yemen",
+];
+
 </script>
 
 <style scoped lang="scss"></style>
