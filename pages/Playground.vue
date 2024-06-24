@@ -13,14 +13,16 @@
         cardTitle="Three.js Experiments"
         cardDescription="Exploring the possibilities of Three.js."
         :cardHeight=0
+        v-if="false"
       />
 
       <TheBaseCard
-        linkTo="/playground/d3"
-        imageAlt="D3.js Experiments"
-        cardTitle="D3.js Experiments"
-        cardDescription="Exploring the possibilities of D3.js."
+        linkTo="/playground/internetUsage"
+        imageAlt="Percentage of individuals using the internet"
+        cardTitle="Percentage of individuals using the internet"
+        cardDescription="Percentage of individuals using the internet from UN data."
         :cardHeight=0
+        :tags="['d3', 'nuxt', 'data visualization', 'un data', 'line chart']"
       />
     </div>
   </div>
