@@ -14,6 +14,9 @@
         <NuxtLink to="/playground">
           <div class="nav-link"><i class="bi bi-joystick"></i> Playground</div>
         </NuxtLink>
+        <NuxtLink to="/blog">
+          <div class="nav-link"><i class="bi bi-pencil"></i> Blog</div>
+        </NuxtLink>
         <NuxtLink to="/about">
           <div class="nav-link"><i class="bi bi-file-person"></i> About</div>
         </NuxtLink>
