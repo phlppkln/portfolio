@@ -243,12 +243,12 @@
     </p>
     <div class="row image-gallery-container">
       <div class="col-md-5 col-xl-6 col-sm-12">
-        <NuxtImg class="image" src="/img/reimagining-design/app_flow.jpg" />
+        <NuxtImg class="image" src="/img/projects/reimagining-design/app_flow.jpg" />
       </div>
       <div class="col-md-5 col-xl-6 col-sm-12">
         <NuxtImg
           class="image"
-          src="/img/reimagining-design/miro_va_system_updated.jpg"
+          src="/img/projects/reimagining-design/miro_va_system_updated.jpg"
         />
       </div>
     </div>
@@ -264,7 +264,7 @@
     <div class="row image-gallery-container">
       <div class="col-md-5 col-xl-6 col-sm-12"><NuxtImg
       class="image"
-      src="/img/reimagining-design/refined_prototype_design_finished_notes.png"
+      src="/img/projects/reimagining-design/refined_prototype_design_finished_notes.png"
     />
         </div>
     <div class="col-md-5 col-xl-5 col-sm-12 image-description">
@@ -272,7 +272,7 @@
     </div>
       <div class="col-md-5 col-xl-6 col-sm-12"> <NuxtImg
       class="image"
-      src="/img/reimagining-design/refined_prototype_design_start_clustering.png"
+      src="/img/projects/reimagining-design/refined_prototype_design_start_clustering.png"
     />
         </div>
     <div class="col-md-5 col-xl-5 col-sm-12 image-description">
@@ -280,7 +280,7 @@
     </div>
         <div class="col-md-5 col-xl-6 col-sm-12"><NuxtImg
       class="image"
-      src="/img/reimagining-design/refined_prototype_design_finished_clustering.png"
+      src="/img/projects/reimagining-design/refined_prototype_design_finished_clustering.png"
     /></div>
     
     <div class="col-md-5 col-xl-5 col-sm-12 image-description">

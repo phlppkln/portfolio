@@ -130,21 +130,21 @@
       <div class="col-md-4 col-sm-6">
         <NuxtImg
           class="image"
-          src="/img/typing-stars/ts_game.png"
+          src="/img/projects/typing-stars/ts_game.png"
           alt="Typing Stars Game"
         />
       </div>
       <div class="col-md-4 col-sm-6">
         <NuxtImg
           class="image"
-          src="/img/typing-stars/ts_main.png"
+          src="/img/projects/typing-stars/ts_main.png"
           alt="Typing Stars Main Menu"
         />
       </div>
       <div class="col-md-4 col-sm-6">
         <NuxtImg
           class="image"
-          src="/img/typing-stars/ts_achievements.png"
+          src="/img/projects/typing-stars/ts_achievements.png"
           alt="Typing Stars Achievements"
         />
       </div>

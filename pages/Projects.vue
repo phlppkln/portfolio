@@ -8,7 +8,7 @@
       <div class="col-xl-3 col-md-5 col-sm-12" ref="cardReimaginingDesignRef">
         <TheBaseCard
           linkTo="/projects/reimaginingDesign"
-          imageSrc="/img/reimagining-design/infinite_canvas_3d-space.png"
+          imageSrc="/img/projects/reimagining-design/infinite_canvas_3d-space.png"
           imageAlt="Reimagining Design"
           cardTitle="Reimagining Design"
           cardDescription="Master thesis exploring the potential of the infinite canvas for the design of interactive articles."
@@ -29,7 +29,7 @@
       <div class="col-xl-3 col-md-5 col-sm-12" ref="cardOSARef">
         <TheBaseCard
           linkTo="/projects/OSA"
-          imageSrc="/img/osa/osa_logo.png"
+          imageSrc="/img/projects/osa/osa_logo.png"
           imageAlt="OSA Logo"
           cardTitle="Online Self Assessment (OSA)"
           cardDescription="Web platform assisting in the selection of a study program. The goal is to promote self-reflection by exploring interests and abilities through interactive tasks and information of various study-relevant topics."
@@ -50,7 +50,7 @@
       <div class="col-xl-3 col-md-5 col-sm-12" ref="cardSeeMoreRef">
         <TheBaseCard
           linkTo="/projects/SeeMore"
-          imageSrc="/img/seeMore/seemore_logo_transp.png"
+          imageSrc="/img/projects/seeMore/seemore_logo_transp.png"
           imageAlt="SeeMore"
           cardTitle="SeeMore"
           cardDescription="Project aiming to motivate urban citizens to spend more time in nature to experience their surrounding more consciously."
@@ -68,7 +68,7 @@
       </div>
       <TheBaseCard
         linkTo="/projects/TypingStars"
-        imageSrc="/img/typing-stars/typing_stars_logo.png"
+        imageSrc="/img/projects/typing-stars/typing_stars_logo.png"
         imageAlt="Typing Stars Logo"
         cardTitle="Typing Stars"
         cardDescription="Mobile game aimed at improving writing skills and to observe typing behavior changes when

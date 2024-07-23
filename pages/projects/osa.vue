@@ -75,16 +75,16 @@
       </p>
       <div class="row image-gallery-container">
         <div class="col-md-5 col-xl-6 col-sm-12">
-          <NuxtImg class="image" src="/img/osa/sortieren_mit_system.png" />
+          <NuxtImg class="image" src="/img/projects/osa/sortieren_mit_system.png" />
         </div>
         <div class="col-md-5 col-xl-6 col-sm-12">
-          <NuxtImg class="image" src="/img/osa/mit_sicherheit.png" />
+          <NuxtImg class="image" src="/img/projects/osa/mit_sicherheit.png" />
         </div>
         <div class="col-md-5 col-xl-6 col-sm-12">
-          <NuxtImg class="image" src="/img/osa/mit_sicherheit_assign1.png" />
+          <NuxtImg class="image" src="/img/projects/osa/mit_sicherheit_assign1.png" />
         </div>
         <div class="col-md-5 col-xl-6 col-sm-12">
-          <NuxtImg class="image" src="/img/osa/mit_sicherheit_assign2.png" />
+          <NuxtImg class="image" src="/img/projects/osa/mit_sicherheit_assign2.png" />
         </div>
       </div>
       <h2>Tools and Languages</h2>
