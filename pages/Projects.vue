@@ -12,6 +12,7 @@
           imageAlt="Reimagining Design"
           cardTitle="Reimagining Design"
           cardDescription="Master thesis exploring the potential of the infinite canvas for the design of interactive articles."
+          projectStatus="ongoing"
           timeRange="2021-current"
           :tags="[
             'web development',
@@ -33,7 +34,8 @@
           imageAlt="OSA Logo"
           cardTitle="Online Self Assessment (OSA)"
           cardDescription="Web platform assisting in the selection of a study program. The goal is to promote self-reflection by exploring interests and abilities through interactive tasks and information of various study-relevant topics."
-          timeRange="2020-current"
+          projectStatus="ongoing"
+          timeRange="2020-2024"
           :tags="[
             'web development',
             'vue.js',
@@ -54,6 +56,7 @@
           imageAlt="SeeMore"
           cardTitle="SeeMore"
           cardDescription="Project aiming to motivate urban citizens to spend more time in nature to experience their surrounding more consciously."
+          projectStatus="finished"
           timeRange="2020 - 2021"
           :tags="[
             'design thinking',

@@ -5,7 +5,7 @@
         <div class="image-container">
           <div class="image">
             <div v-if="imageSrc">
-            <NuxtImg class="image" :src="imageSrc" :alt="imageAlt" height="200" /></div>
+            <NuxtImg class="image" :src="imageSrc" :alt="imageAlt" height="200"/></div>
           <div v-else>
             <div class="image-placeholder" height="200"></div>
           </div>
@@ -14,7 +14,8 @@
         <div class="card-body">
           <div class="card-title text">{{ cardTitle }}</div>
           <div class="card-text text">{{ cardDescription }}</div>
-          <div class="card-time">{{ timeRange }}</div>
+          <div class="card-status" v-if="projectStatus">Project Status: {{ projectStatus }}</div>
+          <div class="card-time" v-if="timeRange">{{ timeRange }}</div>
           <div class="tags-container">
             <div class="tag" v-for="tag in tags">
               <UBadge color="red" variant="solid">{{ tag }}</UBadge>
@@ -49,6 +50,10 @@ const props = defineProps({
   cardDescription: {
     type: String,
     required: true,
+  },
+  projectStatus: {
+    type: String,
+    required: false,
   },
   timeRange: {
     type: String,
@@ -143,13 +148,15 @@ watch(() => cardHeight.value, setCardHeight);
   }
 }
 
-.card-time{
+.card-status, .card-time{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
   color: grey;
+}
+.card-status{  
   margin-top: 1rem;
   border-top: 1px solid black;
 }
