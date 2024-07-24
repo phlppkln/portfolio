@@ -5,34 +5,35 @@
     <div class="text row">
       <h2>Introduction</h2>
       <p>
-        Every interaction with a digital device produces data, which in turn is 
-        then used in many modern user interfaces to show information in a certain way. 
-        This makes it possible to also show a myriad of content to users. To select 
-        the best and desired information can the user get the relevant and right
-        amount of information to the user. This can be a challenging task since
-        too much information can be overwhelming for people which leads to the
-        Information Overload (IO) problem.
+        Every interaction with a digital device produces data, which many modern user interfaces utilize to make design decisions.
+        These can range from simple forms such as the order of images to more complex ones such as the images itself.
+        Especially with the possibilities generative artificial intelligences possesses, 
+        we can almost instantly produce a vast amount of information. 
+        Thus, more than ever, we not only need to consider what we show as designers but also how much of it is shown. 
+        </p>
+      <p>
+        It is often tempting to show as much information as possible and let the user decide how to navigate through it. 
+        However, only by selecting the right amount of information we can prevent an
+        Information Overload (IO) for the user.
       </p>
       <p>
-        In Section 2 this report gives an introduction to the term ”information
-        overload”. It describes and discusses different definition based on
-        literature and gives examples on some of its main causes. IO is a major
-        challenge in Human-ComputerInteraction (HCI) therefore Section 3 shows
-        the importance of IO in HCI and gives examples of countermeasure
-        approaches for today's and future applications.
+        This report, describes the term ”Information
+        Overload” as it is a recurring phenomenon in Human-ComputerInteraction (HCI). First, it discusses different definitions based on
+        literature and presents theories of its causes. Since IO is a major
+        challenge in HCI, we also discuss 
+        the term IO in HCI and what countermeasure strategies human-centered design 
+        offers for the design of applications.
       </p>
       <h2>2 Information Overload</h2>
       <p>
-        Today, especially interactions with devices that are connected to an
-        online service, create a vast amount of information. This so called
-        digital footprint is a increasingly popular term to address the
-        information people generate with every digital interaction. Blue et al.
-        argue that these dig ital footprints log the habits, interests,
-        relationships, and communications of peoples physical lives [1]. These
+        Today, every of our steps on the internet and other digital technology produces a vast amount of information. This so called
+        digital footprint is a increasingly popular term to address the combined
+        information people generate through digital technology. Digital footprints not only log our public data, but also our habits, interests,
+        relationships, and communications [1]. These
         enormous amounts of data make it difficult for designers and developers
         to distinguish between valuable and unnecessary information. New
         information and communications technology allow to display data in many
-        different forms. But one of the problems that occur from the
+        different forms. But one of the problems that occurs from the
         interconnection of the digital and physical world is the amount of
         information that people are confronted with. Humans often cannot process
         everything they perceive and some valuable information might be lost.
@@ -153,7 +154,7 @@
       <h2>3 Information Overload and Human-Computer-Interaction</h2>
       <p>
         The low cost of data collection and storage led to a vast number of
-        possible information to dis play. Designers often need to confront users
+        possible information to display. Designers often need to confront users
         with information that is considered crucial to the product but the
         problem of information overload can occur if too much information is
         shown to users. Thus IO is a very important topic in HCI nowadays and
