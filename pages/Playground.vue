@@ -1,37 +1,35 @@
-
 <template>
   <div class="container row">
     <div class="row projects-playground-intro">
-      Playing around with code can be fun. Here you can find some experimental ideas and projects. No guarantees for how they look or what they do.
+      Playing around with code can be fun. Here you can find some experimental
+      ideas and projects. No guarantees for how they look or what they do.
       Things might be broken.
-  </div>
+    </div>
     <div class="projects-grid">
-    
       <TheBaseCard
         linkTo="/playground/three"
         imageAlt="Three.js Experiments"
         cardTitle="Three.js Experiments"
         cardDescription="Exploring the possibilities of Three.js."
-        :cardHeight=0
+        :cardHeight="0"
         v-if="false"
       />
 
       <TheBaseCard
         linkTo="/playground/internetUsage"
-        imageAlt="Percentage of individuals using the internet"
-        cardTitle="Percentage of individuals using the internet"
-        cardDescription="Percentage of individuals using the internet from UN data."
-        :cardHeight=0
-        :tags="['d3', 'nuxt', 'data visualization', 'un data', 'line chart']"
+        imageSrc="/img/playground/wifi.svg"
+        imageAlt="The Power of the Internet"
+        cardTitle="The Power of the Internet"
+        cardDescription="How did the percentage of people using the internet change from 1990 to 2022 in different countries/continents? 
+        Is there a correlation between internet usage and GDP of countries? 
+        Is there a correlation between internet usage and life satisfaction?"
+        :cardHeight="0"
+        :tags="['d3', 'nuxt', 'data visualization', 'information visualization', 'data exploration', 'line chart']"
       />
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

@@ -7,20 +7,21 @@
         href="http://data.un.org/Data.aspx?d=ITU&f=ind1Code%3aI99H#ITU"
         target="_blank"
         >http://data.un.org/Data.aspx?d=ITU&f=ind1Code%3aI99H#ITU</a
-      >)
+      > & <a href="http://data.un.org/Data.aspx?q=gdp&d=SNAAMA&f=grID%3a101%3bcurrID%3aUSD%3bpcFlag%3a1" target="_blank">http://data.un.org/Data.aspx?q=gdp&d=SNAAMA&f=grID%3a101%3bcurrID%3aUSD%3bpcFlag%3a1</a>) 
+      and <a href="https://ourworldindata.org/happiness-and-life-satisfaction" target="_blank">https://ourworldindata.org/happiness-and-life-satisfaction</a>
     </p>
-    <!-- selector for country -->
-
-    <h2>Data</h2>
-    <div class="data-source" style="margin-top: 2rem">
-      <p><strong>Country: </strong>{{ country }}</p>
-      <p><strong>Data: </strong><br>{{ dataSource }}</p>
-    </div>
 
     <h2>Chart</h2>
-    <USelect v-model="country" :options="countries" placeholder="Search...">
+    <USelect v-model="selectedCountry" :options="countries" placeholder="Search...">
       <template #leading>
-        <UIcon name="i-heroicons-flag" class="w-5 h-5" /> Search... </template
+        <UIcon name="i-heroicons-flag" class="w-5 h-5" /> Search countries... </template
+      >/>
+    </USelect>
+
+    
+    <USelect v-model="selectedContinent" :options="continents" placeholder="Search..." style="margin-top: 1rem; margin-bottom: 2rem">
+      <template #leading>
+        <UIcon name="i-heroicons-flag" class="w-5 h-5" /> Search continents... </template
       >/>
     </USelect>
 
@@ -35,72 +36,106 @@ import { ref, onMounted, watch } from "vue";
 import * as d3 from "d3";
 import type { NumberValue } from "d3";
 
+import { CountryData, type YearValue } from "@/components/playground/types/dataInterfaces"
+
 const chart = ref<HTMLElement | null>(null);
+const countries = ref<string[]>([]);
+const continents = ref<string[]>([]);
+const selectedCountry = ref(countries.value[0]);
+const selectedContinent = ref(continents.value[0]);
 
-const countries = ref([String]);
 
-const country = ref(countries.value[0]);
-watch(country, async () => {
-  const data = await getData();
-  updateChartData(data);
+const data: CountryData[] = [];
+
+watch(selectedCountry, async () => {
+  console.log(data)
+  const rawData = data.filter((d) => d.name === selectedCountry.value);
+  const visData: DataPointVisualization[] = [];
+  rawData.forEach((myData: CountryData) => {
+    if(myData.name == selectedCountry.value) {
+      myData.years.forEach((myYears) => {
+        let entry: DataPointVisualization = {year: 0, lifeSatisfaction: 0, gdp: 0, internetUsage: 0};
+        if(myYears.year != null){
+          entry.year = myYears.year
+        }
+        if(myYears.lifeSatisfaction != null){
+          entry.lifeSatisfaction = myYears.lifeSatisfaction
+        }
+        if(myYears.gdp != null){
+          entry.gdp = myYears.gdp
+        }
+        if(myYears.internetUsage != null){
+          entry.internetUsage = myYears.internetUsage
+        }
+      visData.push(entry);
+      })
+    }
+  });
+
+
+  const dataStats: DataStats | undefined= getDataStats(visData);
+  if(dataStats == undefined) {alert('Data not found'); return}
+  updateChartData(visData, dataStats);
 });
 
-interface DataPoint {
-  Country: String;
-  Value: NumberValue;
-  Year: NumberValue;
+watch(selectedContinent, async () => {
+  console.log(selectedContinent.value);
+})
+
+
+interface DataPointVisualization {
+  year: number;
+  lifeSatisfaction: number;
+  gdp: number;
+  internetUsage: number;
 }
 
-const dataSource = ref<DataPoint[]>([]);
 
-const getData = async () => {
-  const data = await prepareData();
-  const dataCountry = data.get(country.value);
+interface DataStats {
+  yearMin: number;
+  yearMax: number;
+  lifeSatisfactionMin: number;
+  lifeSatisfactionMax: number;
+  gdpMin: number;
+  gdpMax: number;
+  internetUsageMin: number;
+  internetUsageMax: number;
+}
 
-  // convert dataIndia.Value and dataIndia.Year from string to number and remove "Country or Area"
-  let dataConverted: DataPoint[] = [];
-  if(dataCountry){
+const getDataStats = (myData: DataPointVisualization[]) => {
+  const yearMax = d3.greatest(myData, (d) => d.year);
+  const yearMin = d3.least(myData, (d) => d.year);
+  const lifeSatisfactionMin = d3.least(myData, (d) => d.lifeSatisfaction);
+  const lifeSatisfactionMax = d3.greatest(myData, (d) => d.lifeSatisfaction);
+  const gdpMax = d3.greatest(myData, (d) => d.gdp);
+  const gdpMin = d3.least(myData, (d) => d.gdp);
+  const internetUsageMax = d3.greatest(myData, (d) => d.internetUsage);
+  const internetUsageMin = d3.least(myData, (d) => d.internetUsage);
 
-  
-  dataCountry.forEach((d) => {
-    let dataPoint: DataPoint = {
-      Country: "",
-      Value: 0,
-      Year: 0,
-    };
-    dataPoint.Value = +d.Value;
-    dataPoint.Year = +d.Year;
-    dataConverted.push(dataPoint);
-  });
+  if (yearMin == undefined || yearMax == undefined || lifeSatisfactionMin == undefined || lifeSatisfactionMax == undefined || gdpMin == undefined || gdpMax == undefined || internetUsageMin == undefined || internetUsageMax == undefined) {
+    alert('Data not found');
+    return;
+  }
 
-  dataSource.value = dataConverted;
-  return dataConverted;}
-};
 
-const prepareData = async () => {
-  const data = await d3.csv("/data/UNdata_Export_20240623_internet-usage.csv");
+  let dataStats: DataStats =  {
+    yearMin: yearMin.year,
+    yearMax: yearMax.year,
+    lifeSatisfactionMin: lifeSatisfactionMin.lifeSatisfaction,
+    lifeSatisfactionMax: lifeSatisfactionMax.lifeSatisfaction,
+    gdpMin: gdpMin.gdp,
+    gdpMax: gdpMax.gdp,
+    internetUsageMin: internetUsageMin.internetUsage,
+    internetUsageMax: internetUsageMax.internetUsage,
+  };
 
-  // convert data to Datapoint interface
-  let dataConverted: DataPoint[] = [];
-  data.forEach((d) => {
-    let dataPoint: DataPoint = {
-      Country: "",
-      Value: 0,
-      Year: 0,
-    };
-    dataPoint.Country = d["Country or Area"];
-    dataPoint.Value = +d.Value;
-    dataPoint.Year = +d.Year;
-    dataConverted.push(dataPoint);
-  });
+  return dataStats;
+}
 
-  let groupedData = d3.group(dataConverted, (d) => d.Country);
 
-  countries.value= Array.from(groupedData.keys());
-  return groupedData;
-};
+const updateChartData = async (data: DataPointVisualization[], dataStats: DataStats) => {
 
-const updateChartData = async (data: DataPoint[]) => {
+  console.log(data);
   // Declare the chart dimensions and margins.
   const width = 928;
   const height = 500;
@@ -120,24 +155,53 @@ const updateChartData = async (data: DataPoint[]) => {
     .nice();
 
   // Declare the y (vertical position) scale.
-  const y = d3
+  const yScaleGDP = d3
     .scaleLinear()
-    .domain([0, 100])
+    .domain([0, dataStats.gdpMax + 100])
+    .range([height - marginBottom, marginTop])
+    .nice();
+
+    const yScaleLifeSat = d3
+    .scaleLinear()
+    .domain([0, dataStats.lifeSatisfactionMax + 2])
     .range([height - marginBottom, marginTop])
     .nice();
     
+    const yScaleInternet = d3
+    .scaleLinear()
+    .domain([0, dataStats.internetUsageMax + 5])
+    .range([height - marginBottom, marginTop])
+    .nice();
 
-  const line = d3
+
+    const yAxisGDP = d3.axisLeft(yScaleGDP);
+    const yAxisLifeSat = d3.axisLeft(yScaleLifeSat);
+    const yAxisInternet = d3.axisLeft(yScaleInternet);
+
+
+  const lineGDP = d3
     .line()
-    .x((d) => x(d.Year))
-    .y((d) => y(d.Value));
+    .x((d) => x(d.year))
+    .y((d) => yScaleGDP(d.gdp));
+
+  const lineLifeSat = d3
+    .line()
+    .x((d) => x(d.year))
+    .y((d) => yScaleLifeSat(d.lifeSatisfaction));
+
+  const lineInternet = d3
+    .line()
+    .x((d) => x(d.year))
+    .y((d) => yScaleInternet(d.internetUsage));
+
+  
 
   // Create the SVG container.
   const svg = d3.select(chart.value)
     .append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("viewBox", [0, 0, width, height])
+    .attr("width", width+300)
+    .attr("height", height+200)
+    .attr("viewBox", [0, 0, width-150, height+100])
     .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
 
   // Add the x-axis.
@@ -149,8 +213,7 @@ const updateChartData = async (data: DataPoint[]) => {
   // Add the y-axis, remove the domain line, add grid lines and a label.
   svg
     .append("g")
-    .attr("transform", `translate(${marginLeft},0)`)
-    .call(d3.axisLeft(y).ticks(height / 40))
+    .attr("transform", `translate(${marginLeft}, 0)`)
     .call((g) => g.select(".domain").remove())
     .call((g) =>
       g
@@ -166,21 +229,125 @@ const updateChartData = async (data: DataPoint[]) => {
         .attr("y", 10)
         .attr("fill", "currentColor")
         .attr("text-anchor", "start")
-        .text("Percentage of individuals using the internet (%)")
+        .text(selectedCountry.value)
     );
 
+    svg
+    .append("g")
+    .attr("transform", `translate(0, 0)`)
+    .attr("stroke", "green")
+    .call(yAxisInternet);
+
+    svg
+    .append("g")
+    .attr("transform", `translate(-60, 0)`)
+    .attr("stroke", "steelblue")
+    .call(yAxisGDP)
+
+    svg
+    .append("g")
+    .attr("transform", `translate(-30, 0)`)
+    .attr("stroke", "orange")
+    .call(yAxisLifeSat)
+    
     svg
     .append("path")
     .attr("fill", "none")
     .attr("stroke", "steelblue")
     .attr("stroke-width", 1.5)
-    .attr("d", line(data));
+    .attr("d", lineGDP(data));
+
+    svg
+    .append("path")
+    .attr("fill", "none")
+    .attr("stroke", "orange")
+    .attr("stroke-width", 1.5)
+    .attr("d", lineLifeSat(data));
+
+    svg
+    .append("path")
+    .attr("fill", "none")
+    .attr("stroke", "green")
+    .attr("stroke-width", 1.5)
+    .attr("d", lineInternet(data));
 };
 
 onMounted(async () => {
-  const data = await getData();
-  updateChartData(data);
+  await composeData();
+  fillSelects();
+  //updateChartData(data);
 });
+
+const composeData = async () => {
+  const dataInternetUsage = await d3.csv("/data/UNdata_Export_20240623_internet-usage.csv");
+  const dataLifeSatisfaction = await d3.csv("/data/happiness-cantril-ladder.csv");
+  const dataGDP = await d3.csv("/data/UNData_Export_20240723_gdp.csv"); 
+
+  // create data years array from 1990 to 2022
+  let emptyYears: YearValue[] = [];
+
+  d3.range(1990, 2023).forEach((d) => {
+    emptyYears.push({year: d});
+  });
+    
+  let countriesNames: string[] = dataInternetUsage.map((d) => d["Country or Area"]);
+  //remove duplicates
+  countriesNames = [...new Set(countriesNames)];
+
+  // fill data with countries
+  countriesNames.forEach((d) => {
+    data.push(new CountryData(d, structuredClone(emptyYears)));
+  });
+
+  
+  // fill data with values
+  data.forEach((d) => {
+  dataInternetUsage.forEach((d2) => {
+    if (d.name === d2["Country or Area"]) {
+      let yearNumber = Number(d2.Year);
+      d.years.forEach((d3) => {
+        if (d3.year === yearNumber) {
+          d3.internetUsage = +d2.Value;
+        }
+      });
+    }
+    });
+    
+    dataLifeSatisfaction.forEach((d2) => {
+      if (d.name === d2["Country or Area"]) {
+        let yearNumber = Number(d2.Year);
+        d.years.forEach((d3) => {
+          if (d3.year === yearNumber) {
+            d3.lifeSatisfaction = +d2.Value;
+          }
+        });
+      }
+    });
+
+    dataGDP.forEach((d2) => {
+      if (d.name === d2["Country or Area"]) {
+        let yearNumber = Number(d2.Year);
+        d.years.forEach((d3) => {
+          if (d3.year === yearNumber) {
+            d3.gdp = +d2.Value;
+          }
+        });
+      }
+    });
+  });
+
+  console.log(data)
+};
+
+const fillSelects = () => {  
+
+  data.map((d) => countries.value.push(d.name));
+
+  const continentsNames: string[] = [
+    "Africa", "Europe", "North America", "Central America", "Caribbean", "South America", "Oceania", "Asia"
+  ];  
+  continentsNames.map((d) => continents.value.push(d));
+};
 
 const continentAfrica = [
   "Angola",
