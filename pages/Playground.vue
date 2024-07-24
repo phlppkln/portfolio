@@ -1,9 +1,9 @@
 <template>
   <div class="container row">
     <div class="row projects-playground-intro">
-      Playing around with code can be fun. Here you can find some experimental
+      Playing around can be fun. Here you can find some experimental
       ideas and projects. No guarantees for how they look or what they do.
-      Things might be broken.
+      Things might be broken and/or unfinished.
     </div>
     <div class="projects-grid">
       <TheBaseCard
