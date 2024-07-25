@@ -1,8 +1,7 @@
 <template>
   <div class="footer">
     <div class="footer-text">
-      <div class="footer-text-item">Created with Nuxt by</div>
-      <div class="footer-text-item">Philipp Klein</div>
+      <div class="footer-text-item"><a href="https://github.com/phlppkln/portfolio-philippklein.at" target="_blank">About this page</a></div>
     </div>
     <div class="footer-text">
       <div class="footer-text-item">Contact</div>
@@ -10,7 +9,7 @@
             <i class="bi bi-envelope"></i> klein.philipp@posteo.at</a></div>
     </div>
     <div class="footer-text">
-      <div class="footer-text-item">last updated: 06/2024</div>
+      <div class="footer-text-item">last updated: 07/2024</div>
     </div>
   </div>
 </template>
