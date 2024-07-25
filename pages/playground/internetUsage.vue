@@ -11,6 +11,15 @@
       and <a href="https://ourworldindata.org/happiness-and-life-satisfaction" target="_blank">https://ourworldindata.org/happiness-and-life-satisfaction</a>
     </p>
 
+
+    <div class="current-challenges">
+    <h2>TODOS: </h2>
+    <div v-for="challenge in currentChallenges">
+      <div class="challenge-item" :class="{ 'challenge-item-done': challenge.done }">{{ challenge.name }}</div>
+      <div class="challenge-description" v-if="challenge.description">{{ challenge.description }}</div>
+    </div>
+  </div>
+
     <h2>Chart</h2>
     <USelect v-model="selectedCountry" :options="countries" placeholder="Search...">
       <template #leading>
@@ -44,6 +53,20 @@ const continents = ref<string[]>([]);
 const selectedCountry = ref(countries.value[0]);
 const selectedContinent = ref(continents.value[0]);
 
+
+interface Challenge{
+  name: string;
+  description?: string;
+  done: boolean;
+}
+
+const currentChallenges: Challenge[] = [];
+currentChallenges.push({name: 'add labels to the chart (scales and lines)', done: true})
+currentChallenges.push({name: 'style the chart title (= country name)', done: true})
+currentChallenges.push({name: 'add a legend', done: false})
+currentChallenges.push({name: 'add a tooltip', done: false})
+currentChallenges.push({name: 'add a filter', done: false})
+currentChallenges.push({name: 'implement continents functionality', done: false})
 
 const data: CountryData[] = [];
 
@@ -144,6 +167,16 @@ const updateChartData = async (data: DataPointVisualization[], dataStats: DataSt
   const marginBottom = 30;
   const marginLeft = 40;
 
+
+    // Create the SVG container.
+    const svg = d3.select(chart.value)
+    .append("svg")
+    .attr("width", width+300)
+    .attr("height", height+200)
+    .attr("viewBox", [0, 0, width-250, height+120])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
+
   const yearMin = 1990;
   const yearMax = 2025;
 
@@ -174,9 +207,6 @@ const updateChartData = async (data: DataPointVisualization[], dataStats: DataSt
     .nice();
 
 
-    const yAxisGDP = d3.axisLeft(yScaleGDP);
-    const yAxisLifeSat = d3.axisLeft(yScaleLifeSat);
-    const yAxisInternet = d3.axisLeft(yScaleInternet);
 
 
   const lineGDP = d3
@@ -194,15 +224,8 @@ const updateChartData = async (data: DataPointVisualization[], dataStats: DataSt
     .x((d) => x(d.year))
     .y((d) => yScaleInternet(d.internetUsage));
 
-  
 
-  // Create the SVG container.
-  const svg = d3.select(chart.value)
-    .append("svg")
-    .attr("width", width+300)
-    .attr("height", height+200)
-    .attr("viewBox", [0, 0, width-150, height+100])
-    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
 
   // Add the x-axis.
   svg
@@ -211,44 +234,75 @@ const updateChartData = async (data: DataPointVisualization[], dataStats: DataSt
     .call(d3.axisBottom(x).tickFormat((d) => String(d)));
 
   // Add the y-axis, remove the domain line, add grid lines and a label.
-  svg
+
+
+    svg
     .append("g")
-    .attr("transform", `translate(${marginLeft}, 0)`)
-    .call((g) => g.select(".domain").remove())
-    .call((g) =>
-      g
-        .selectAll(".tick line")
-        .clone()
-        .attr("x2", width - marginLeft - marginRight)
-        .attr("stroke-opacity", 0.1)
-    )
     .call((g) =>
       g
         .append("text")
-        .attr("x", -marginLeft)
-        .attr("y", 10)
+        .attr("x", 100)
+        .attr("y", 40)
         .attr("fill", "currentColor")
         .attr("text-anchor", "start")
         .text(selectedCountry.value)
+        .attr("style", "font-size: 30px;")
     );
 
+    
+    /** AXIS INTERNET */
+    const yAxisInternet = d3.axisLeft(yScaleInternet);
     svg
     .append("g")
     .attr("transform", `translate(0, 0)`)
     .attr("stroke", "green")
     .call(yAxisInternet);
 
+    svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 0)
+    .attr("dy", "1.2em")
+    .attr("transform", "rotate(-90)")
+    .text("→ Internet Usage (% of Population)");
+    /**------------------------------------------------------- */
+
+    /** AXIS LIFE SATISFACTION */
+    const yAxisLifeSat = d3.axisLeft(yScaleLifeSat);
     svg
     .append("g")
-    .attr("transform", `translate(-60, 0)`)
+    .attr("transform", `translate(-70, 0)`)
+    .attr("stroke", "orange")
+    .call(yAxisLifeSat)
+
+    svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -70)
+    .attr("dy", "1.2em")
+    .attr("transform", "rotate(-90)")
+    .text("→ Happiness and Life Satisfaction");
+    /**------------------------------------------------------- */
+
+
+    /** AXIS GDP */
+    const yAxisGDP = d3.axisLeft(yScaleGDP);
+    svg
+    .append("g")
+    .attr("transform", `translate(-130, 0)`)
     .attr("stroke", "steelblue")
     .call(yAxisGDP)
 
-    svg
-    .append("g")
-    .attr("transform", `translate(-30, 0)`)
-    .attr("stroke", "orange")
-    .call(yAxisLifeSat)
+  svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -130)
+    .attr("dy", "1.2em")
+    .attr("transform", "rotate(-90)")
+    .text("→ GDP per Capita");
+/**------------------------------------------------------- */
+
+
     
     svg
     .append("path")
@@ -606,4 +660,16 @@ const continentAsia = [
 
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.challenge-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $primary;
+}
+.challenge-item-done{
+  text-decoration: line-through;
+}
+</style>
