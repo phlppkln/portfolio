@@ -33,3 +33,15 @@
         }
     }
 }
+
+@mixin fadein5s-cubic-bezier{
+    animation: fadein 5s cubic-bezier(0.1, 0.3, 0.7, 1.0) forwards;
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

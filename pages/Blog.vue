@@ -31,4 +31,8 @@
 </script>
 
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container {
+  @include fadein1s-cubic-bezier;
+}
+</style>

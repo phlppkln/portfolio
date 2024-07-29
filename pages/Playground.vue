@@ -16,6 +16,16 @@
       />
 
       <TheBaseCard
+        linkTo="/playground/radialMenu"
+        imageAlt="Radial Menu"
+        cardTitle="Radial Menu"
+        cardDescription="Experimenting with radial menus to improve user experience by adding more interactivity."
+        :cardHeight="0"
+        :tags="['nuxt', 'vue', 'ui design', 'ux design', 'interactivity']"
+      />
+
+
+      <TheBaseCard
         linkTo="/playground/internetUsage"
         imageSrc="/img/playground/wifi.svg"
         imageAlt="The Power of the Internet"
@@ -32,4 +42,9 @@
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+.container {
+  @include fadein1s-cubic-bezier;
+}
+</style>
