@@ -19,7 +19,7 @@
 
     <TheBaseProjectInfo
       role="Development, Design, Research"
-      timeRange="2022-current"
+      timeRange="2021-current"
     />
     <!--     <h2 v-if="language == 'en'">Abstract</h2>
     <h2 v-if="false">Kurzfassung</h2>

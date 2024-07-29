@@ -22,6 +22,7 @@
         cardDescription="Experimenting with radial menus to improve user experience by adding more interactivity."
         :cardHeight="0"
         :tags="['nuxt', 'vue', 'ui design', 'ux design', 'interactivity']"
+        v-if="false"
       />
 
 
