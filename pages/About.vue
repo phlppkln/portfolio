@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div class="row">
-      <h1>About Me</h1>
       <div class="h1-subtitle">Hi, I am Philipp.</div>
     </div>
 
@@ -12,134 +11,105 @@
       <div class="text-container col-md-12">
         <div class="text">
           <p>
-            I am a graduate from TU Wien with a Master's degree in "Media and
-            Human-Centered Computing". My interests revolve around the broad
-            realm of Human-Computer Interaction (HCI) and the art of integrating
-            digital technology into our lives, always with a human-centered
-            approach at its core.
+            Raised in Burgenland, Austria, I completed my Masters's
+            degree in Computer Science at the Technical University of Vienna (TU
+            Wien) in 2023. During my studies, I developed a passion for science
+            and design. As a result I graduated with a specialization in "Media and Human-Centered Computing". 
+            I created an innovative self-assessment tool to support
+            students in their study decision, which was introduced as a
+            compulsory part of the admission process for all prospective
+            computer science students at TU Wien in 2024.
           </p>
           <p>
-            I am passionate about about the interplay between design and human
-            perception through technology, particularly by exploring novel ways
-            to harness interactivity. My current focus lies on the possibilities
-            that digital technology offers for collaboration and information
-            visualization to enhance understanding and ignite our creativity.
+            In my work, I focus on Human-Computer Interaction and enjoy
+            finding new ways to integrate the digital world into our lives. I
+            have developed skills in design and code, and have worked on
+            projects that aim to support people in ideation and decision making 
+            through self-reflection and information visualization.
+          </p>
+          <p>
+            When not working, you can find me exploring the great
+            outdoors across all sorts of sports. But, I especially enjoy grabbing my bike and camera to discover 
+            new connections between places on the lesser-traveled paths.
           </p>
         </div>
       </div>
     </div>
-    <p class="citation">
-      Because after all, it's not just about functionality; it's about creating
-      digital experiences that captivate us and invite exploration.
-    </p>
 
-    <div class="row education-work-container">
+    <div class="row education-work-container fadein5s-cubic-bezier">
       <div class="col-md-6">
-        <h2>Education</h2>
+      <h2>some hard facts:</h2>
         <ul>
           <li class="li-main">
-            Master study "Media- and Human-Centered-Computing"
+            Master degree in "Media- and Human-Centered-Computing" and bachelor
+            degree in "Media Informatics and Visual Computing"
           </li>
           <ul>
-            <li>Technische Universität Wien (2019-2023)</li>
-            <li style="list-style-type: none">
-              <em>Passed with distinction</em>
-            </li>
-          </ul>
-          <li class="li-main">
-            Bachelor study "Media Informatics and Visual Computing"
-          </li>
-          <ul>
-            <li>Technische Universität Wien (2013-2019)</li>
+            <li>Technische Universität Wien</li>
           </ul>
         </ul>
-      </div>
-
-      <div class="col-md-6">
-        <h2>Work Experience</h2>
         <ul>
-          <li class="li-main">Freelance Web Developer</li>
-          <ul>
-            <li>Technische Universität Wien (04/2024 - current)</li>
-          </ul>
           <li class="li-main">
-            Student employee in research and administration
+            Student Assistant for Research and Administration
           </li>
           <ul>
-            <li>Technische Universität Wien (09/2020 - 07/2023)</li>
-          </ul>
-          <li class="li-main">Scientific employee for digitization</li>
-          <ul>
-            <li>Wiener Linien (05/2019 - 05/2020)</li>
-          </ul>
-          <li class="li-main">
-            Tutor <em>"Interface and Interaction Design"</em>
-          </li>
-          <ul>
-            <li>Technische Universität Wien (10/2019 - 02/2020)</li>
-            <li>Technische Universität Wien (10/2018 - 02/2019)</li>
-            <li>Technische Universität Wien (10/2017 - 02/2018)</li>
+            <li>Technische Universität Wien</li>
           </ul>
         </ul>
-      </div>
-      <div class="col-md-6">
-        <h2>Awards</h2>
-        <ul>
-          <li>
-            <a
-              href="https://www.fhstp.ac.at/de/newsroom/news/internationale-fachtagung-zur-medientechnik"
-              target="_blank"
-              >5. International Conference on Creative\Media/Technologies
-              (IConCMT)</a
-            >
-            2023 (German)
+        <!-- 
+          <ul>
+            <li class="li-main">
+              Awards
+            </li>            
             <ul>
               <li>
                 <strong>Different Brilliant:</strong> Award for theses that
                 represent best-practice approaches to applied and artistic
                 research projects in the field of media, design and media
-                creation.
+                creation @ IConCMT 2023
               </li>
-            </ul>
-          </li>
-        </ul>
+            </ul>    
+          </ul> -->
       </div>
       <div class="col-md-6">
-        <h2>Tools and Languages</h2>
+        <h2>my main tech stack:</h2>
         <ul>
-          <li>Vue.js | Nuxt</li>
+          <li>Vue | Nuxt</li>
           <li>React | Next</li>
           <li>Javascript | Typescript</li>
-          <li>Figma</li>
-          <li>Miro</li>
-          <li>Adobe CC</li>
+          <li>D3.js, Chart.js, p5.js, Three.js, ...</li>
+          <li>Python</li>
+          <li>Figma, Miro, Adobe CC, Git, VS Code, Slack, ...</li>
         </ul>
       </div>
       <div class="col-md-6">
-        <h2>Interests</h2>
+        <h2>my interest stack:</h2>
         <ul>
           <li>Human-Computer Interaction</li>
           <li>UI/UX Design</li>
           <li>Information Visualization</li>
           <li>Interaction Design</li>
-          <li>E-Learning</li>
-          <li>Web Development</li>
-          <li>Digital Collaboration</li>
+          <li>Technology Supported Learning</li>
+          <li>Web Development / Design</li>
+          <li>(Digital) Collaboration</li>
         </ul>
       </div>
       <div class="col-md-6">
-        <h2>Contact</h2>
+        <h2>let's have a chat:</h2>
         <ul>
           <li>
             <i class="bi bi-envelope"></i>
-            <a href="mailto:klein.philipp@posteo.at"> klein.philipp@posteo.at</a>
+            <a href="mailto:klein.philipp@posteo.at">
+              klein.philipp@posteo.at</a
+            >
           </li>
           <li>
             <i class="bi bi-linkedin"></i>
             <a
               href="https://www.linkedin.com/in/philipp-klein-5a98261b1/"
               target="_blank"
-              > philippklein</a
+            >
+              philippklein</a
             >
           </li>
           <li>
@@ -157,6 +127,7 @@
 <style scoped lang="scss">
 .container {
   @include fadein1s-cubic-bezier;
+  margin-top: 10%;
 }
 .photo-container {
   position: relative;
@@ -195,7 +166,7 @@ p {
 }
 
 .education-work-container {
-  margin-top: 2rem;
+  margin-top: 12rem;
   margin-bottom: 2rem;
   width: 100%;
 }
@@ -205,6 +176,14 @@ p {
 }
 li {
   margin-top: 0.5rem;
-  list-style-type: disc;
+  list-style-type: square;
+
+  &::marker {
+    color: $primary;
+  }
+}
+
+.fadein5s-cubic-bezier {
+  @include fadein5s-cubic-bezier;
 }
 </style>
