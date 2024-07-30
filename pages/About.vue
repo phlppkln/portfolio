@@ -15,8 +15,8 @@
             degree in Computer Science at the Technical University of Vienna (TU
             Wien) in 2023. During my studies, I developed a passion for science
             and design. As a result I graduated with a specialization in "Media and Human-Centered Computing". 
-            I created an innovative self-assessment tool to support
-            students in their study decision, which was introduced as a
+            At the TU Wien, I also created an innovative self-assessment tool to support
+            people in their study decision. This platform was introduced as a
             compulsory part of the admission process for all prospective
             computer science students at TU Wien in 2024.
           </p>
