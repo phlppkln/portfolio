@@ -32,6 +32,9 @@
             outdoors across all sorts of sports. But, I especially enjoy grabbing my bike and camera to discover 
             new connections between places on the lesser-traveled paths.
           </p>
+          <p>
+            I especially enjoy designing all kinds of interfaces and flat and minimalistic interfaces. However, other principles 
+          </p>
         </div>
       </div>
     </div>
