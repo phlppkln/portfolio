@@ -32,7 +32,7 @@
         cardDescription="Experimenting with p5.js to improve user experience by adding more interactivity."
         :cardHeight="0"
         :tags="['nuxt', 'vue', 'ui design', 'p5.js', 'ux design', 'interactivity']"
-        v-if="true"
+        v-if="false"
       />
 
       <TheBaseCard
