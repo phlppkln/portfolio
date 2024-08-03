@@ -335,7 +335,7 @@ onMounted(async () => {
 const composeData = async () => {
   const dataInternetUsage = await d3.csv("/data/UNdata_Export_20240623_internet-usage.csv");
   const dataLifeSatisfaction = await d3.csv("/data/happiness-cantril-ladder.csv");
-  const dataGDP = await d3.csv("/data/UNData_Export_20240723_gdp.csv"); 
+  const dataGDP = await d3.csv("/data/UNdata_Export_20240723_gdp.csv"); 
 
   // create data years array from 1990 to 2022
   let emptyYears: YearValue[] = [];

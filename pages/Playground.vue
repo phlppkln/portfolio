@@ -1,9 +1,9 @@
 <template>
   <div class="container row">
     <div class="row projects-playground-intro">
-      Playing around with code can be fun. Here you can find some experimental
+      Playing around can be fun. Here you can find some experimental
       ideas and projects. No guarantees for how they look or what they do.
-      Things might be broken.
+      Things might be broken and/or unfinished.
     </div>
     <div class="projects-grid">
       <TheBaseCard
@@ -22,8 +22,18 @@
         cardDescription="Experimenting with radial menus to improve user experience by adding more interactivity."
         :cardHeight="0"
         :tags="['nuxt', 'vue', 'ui design', 'ux design', 'interactivity']"
+        v-if="false"
       />
 
+      <TheBaseCard
+        linkTo="/playground/p5"
+        imageAlt="p5.js Experiments"
+        cardTitle="p5.js Experiments"
+        cardDescription="Experimenting with p5.js to improve user experience by adding more interactivity."
+        :cardHeight="0"
+        :tags="['nuxt', 'vue', 'ui design', 'p5.js', 'ux design', 'interactivity']"
+        v-if="true"
+      />
 
       <TheBaseCard
         linkTo="/playground/internetUsage"

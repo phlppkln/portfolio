@@ -23,7 +23,7 @@
 
     <TheBaseProjectInfo
       role="Development, Design, Research"
-      timeRange="2023-current"
+      timeRange="2020-2024"
     />
     <div class="row">
       <p>

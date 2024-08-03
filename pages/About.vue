@@ -14,9 +14,9 @@
             Raised in Burgenland, Austria, I completed my Masters's
             degree in Computer Science at the Technical University of Vienna (TU
             Wien) in 2023. During my studies, I developed a passion for science
-            and design. As a result, I graduated with a specialization in "Media and Human-Centered Computing". 
+            and design. As a result I graduated with a specialization in "Media and Human-Centered Computing". 
             At the TU Wien, I also created an innovative self-assessment tool to support
-            students in their study decision, which was introduced as a
+            people in their study decision. This platform was introduced as a
             compulsory part of the admission process for all prospective
             computer science students in 2024.
           </p>
