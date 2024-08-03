@@ -14,5 +14,6 @@ export default defineNuxtConfig({
   components: [
     '~/components'
   ],
-  modules: ['nuxt-bootstrap-icons', "@nuxt/image", "@nuxt/ui"]
+  modules: ['nuxt-bootstrap-icons', "@nuxt/image", "@nuxt/ui"],
+  plugins: ['~/plugins/p5.js']
 });

@@ -25,6 +25,15 @@
         v-if="false"
       />
 
+      <TheBaseCard
+        linkTo="/playground/p5"
+        imageAlt="p5.js Experiments"
+        cardTitle="p5.js Experiments"
+        cardDescription="Experimenting with p5.js to improve user experience by adding more interactivity."
+        :cardHeight="0"
+        :tags="['nuxt', 'vue', 'ui design', 'p5.js', 'ux design', 'interactivity']"
+        v-if="true"
+      />
 
       <TheBaseCard
         linkTo="/playground/internetUsage"
