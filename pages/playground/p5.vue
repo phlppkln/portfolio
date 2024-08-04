@@ -2,6 +2,7 @@
     <div class="container">
         <h1>P5</h1>
 
+        <p>This is a P5 sketch in the background. </p>
         <div class="p5-sketch">
             <P5Sketch></P5Sketch>
         </div>
@@ -13,10 +14,12 @@
 
   <style scoped lang="scss">
   .p5-sketch {
-      border: 1px solid red;
-      background-color: $primary;
-      width: 100vw;
-      height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
   }
   </style>
   

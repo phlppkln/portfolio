@@ -11,18 +11,27 @@
   
   const { $p5 } = useNuxtApp()
 
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-  
+const props = defineProps({
+  width: {
+    type: Number,
+    required: true
+  },
+  height: {
+    type: Number,
+    required: true
+  }
+})
+
   const sketch = (p) => {
     p.setup = function() {
-      p.createCanvas(windowWidth, windowHeight)
+      p.createCanvas(props.width, props.height)
     }
   
     p.draw = function() {
       p.background(200)
       p.ellipse(p.width / 2, p.height / 2, 50, 50)
     }
+
   }
   
   onMounted(() => {
