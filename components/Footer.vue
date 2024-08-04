@@ -25,7 +25,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-top: 0.5px solid $primary;
+  border-top: 0.5px solid var(--primary-color);
   padding: 0.5rem;
 
   @media (max-width: 768px) {

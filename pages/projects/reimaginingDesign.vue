@@ -440,10 +440,10 @@ const abstractItem = [
 <style scoped lang="scss">
 .abstract {
   margin-bottom: 2rem;
-  background-color: $primary;
+  background-color: var(--primary-color);
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 0 1rem $secondary;
+  box-shadow: 0 0 1rem var(--secondary-color);
   p {
     color: white;
   }
@@ -465,23 +465,23 @@ const abstractItem = [
   cursor: pointer;
   padding: 0.5em;
   border-radius: 1rem;
-  border: 1px solid $secondary;
+  border: 1px solid var(--secondary-color);
   font-weight: bolder;
   margin: 0.5em;
 
   &:hover {
-    background-color: $secondary;
-    color: $background;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
   }
 }
 
 .slider {
-  border: 0.2rem solid $secondary;
+  border: 0.2rem solid var(--secondary-color);
   width: 100%;
   height: 100%;
 }
 .slider-item {
-  background-color: $primary;
+  background-color: var(--primary-color);
   width: 50%;
   height: 2rem;
   transition: transform 0.5s ease;
@@ -494,12 +494,12 @@ const abstractItem = [
 .abstract-header {
   cursor: pointer;
   h2 {
-    color: $background !important;
+    color: var(--background-color) !important;
   }
   &:hover {
-    background-color: $primary;
+    background-color: var(--primary-color);
     h2 {
-      text-decoration: underline $secondary 0.5rem;
+      text-decoration: underline var(--secondary-color) 0.5rem;
     }
   }
 }
@@ -539,8 +539,8 @@ const abstractItem = [
   height: auto;
   margin: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 0 1rem $secondary;
-  border: 0.3rem solid $primary;
+  box-shadow: 0 0 1rem var(--secondary-color);
+  border: 0.3rem solid var(--primary-color);
 }
 .image-description{
   padding: 2rem;

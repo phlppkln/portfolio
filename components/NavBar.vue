@@ -41,7 +41,7 @@ const toggleNavBar = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 4px solid $primary;
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .nav-bar-container {
@@ -87,7 +87,7 @@ const toggleNavBar = () => {
     position: absolute;
     width: 100%;
     height: 4px;
-    background-color: black;
+    background-color: var(--primary-color);
     transition: all 0.3s ease;
   }
 
@@ -124,7 +124,7 @@ const toggleNavBar = () => {
 
 .nav-link {
   padding: 1em;
-  color: black;
+  color: var(--text-color);
   font-weight: bold;
   font-size: 1.5rem;
   text-decoration: none;
@@ -137,15 +137,15 @@ const toggleNavBar = () => {
 
 a {
   text-decoration: none;
-  border-top: 0.2em solid $background;
+  border-top: 0.2em solid var(--background-color);
 
   &:hover {
-    border-top: 0.2em solid $secondary;
-    background-color: $background !important;
+    border-top: 0.2em solid var(--secondary-color);
+    background-color: var(--background-color) !important;
   }
 
   &.router-link-active {
-    border-top: 0.2em solid $secondary;
+    border-top: 0.2em solid var(--secondary-color);
   }
 }
 </style>

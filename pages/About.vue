@@ -182,7 +182,7 @@ li {
   list-style-type: square;
 
   &::marker {
-    color: $primary;
+    color: var(--primary-color);
   }
 }
 

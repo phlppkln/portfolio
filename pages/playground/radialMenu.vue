@@ -104,7 +104,7 @@
     background-color: whitesmoke;
     opacity: 0.7;
     border-radius: 10rem;
-    border: 1rem solid $primary;
+    border: 1rem solid var(--primary-color);
   }
   .menu li {
     position: absolute;
@@ -130,9 +130,9 @@
     transform: rotate(calc(360deg / -4 * var(--i)));
     transition: 1s;
     color: transparent;
-    border: 0.2rem solid $secondary;
+    border: 0.2rem solid var(--secondary-color);
     transition-delay: 0.5s;
-    filter: drop-shadow(0 0 0.2rem $secondary);
+    filter: drop-shadow(0 0 0.2rem var(--secondary-color));
   }
   
   .menuToggle {

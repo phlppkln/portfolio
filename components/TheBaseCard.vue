@@ -102,8 +102,8 @@ watch(() => cardHeight.value, setCardHeight);
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  outline: 2px solid $primary;
-  border: 1px solid $primary;
+  outline: 2px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   text-decoration: none;
   border-radius: 0rem;
 
@@ -115,7 +115,7 @@ watch(() => cardHeight.value, setCardHeight);
     justify-content: center;
     align-items: center;
     background-color: white;
-    border-bottom: 0.5px solid $primary;
+    border-bottom: 0.5px solid var(--primary-color);
 
     .image{
       max-width: 100%;
@@ -131,15 +131,15 @@ watch(() => cardHeight.value, setCardHeight);
 
 .card:hover {
   animation: colorize 0.5s forwards;
-  color: $background;
+  color: var(--background-color);
 
   @keyframes colorize {
     0% {
     }
     100% {
       
-  background-color: $secondary;
-  outline: 5px solid $primary;
+  background-color: var(--secondary-color);
+  outline: 5px solid var(--primary-color);
     }
   }
   

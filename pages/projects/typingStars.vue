@@ -200,23 +200,23 @@ const changeLanguage = (languageClicked?: string) => {
   cursor: pointer;
   padding: 0.5em;
   border-radius: 1rem;
-  border: 1px solid $secondary;
+  border: 1px solid var(--secondary-color);
   font-weight: bolder;
   margin: 0.5em;
 
   &:hover {
-    background-color: $secondary;
-    color: $background;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
   }
 }
 
 .slider {
-  border: 0.2rem solid $secondary;
+  border: 0.2rem solid var(--secondary-color);
   width: 100%;
   height: 100%;
 }
 .slider-item {
-  background-color: $primary;
+  background-color: var(--primary-color);
   width: 50%;
   height: 2rem;
   transition: transform 0.5s ease;

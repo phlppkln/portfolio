@@ -179,8 +179,8 @@
   height: auto;
   margin: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 0 1rem $secondary;
-  border: 0.3rem solid $primary;
+  box-shadow: 0 0 1rem var(--secondary-color);
+  border: 0.3rem solid var(--primary-color);
 }
 .image-description{
   padding: 2rem;

@@ -667,7 +667,7 @@ const continentAsia = [
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid var(--primary-color);
 }
 .challenge-item-done{
   text-decoration: line-through;

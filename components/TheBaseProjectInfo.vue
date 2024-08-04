@@ -47,13 +47,13 @@ const props = defineProps({
     align-items: end;
     margin-bottom: 1rem;
     opacity: 0.65 !important;
-    border-bottom: 0.5px solid $primary;
+    border-bottom: 0.5px solid var(--primary-color);
 }
 
 .info-header{
     font-weight: bolder;
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: $secondary;
+    color: var(--secondary-color);
 }
 </style>
