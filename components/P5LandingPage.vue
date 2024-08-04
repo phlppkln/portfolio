@@ -29,7 +29,7 @@ const props = defineProps({
   
     p.draw = function() {
       p.background(200)
-      p.ellipse(p.width / 2, p.height / 2, 50, 50)
+      p.ellipse(p.width / 2, p.height / 2, 250, 250)
     }
 
   }
