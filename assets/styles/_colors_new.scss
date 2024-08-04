@@ -1,23 +1,79 @@
 // PATAGONIAN KNOT
-$background-patag-knot: #f1f1f1;
 $primary-patag-knot: #08645e;
+$primary-patag-knot-dark: #064541;
 $secondary-patag-knot: #bd4342;
+$secondary-patag-knot-dark: #9A3938;
+$background-patag-knot: #f1f1f1;
 $text-patag-knot: #000000;
+.theme-patag-knot{
+    --primary-color: #08645e;
+    --primary-dark-color: #064541;
+    --secondary-color: #bd4342;
+    --secondary-dark-color: #9A3938;
+    --background-color: #f1f1f1;
+    --text-color: #000000;
+}
 
 // TIERRA DEL FUEGO
 $primary-tdf: #B58A47;
+$primary-tdf-dark: #8D6C37;
 $secondary-tdf: #4682B4;
+$secondary-tdf-dark: #396387;
 $background-tdf: #F5F5F5;
 $text-tdf: #2F4F4F;
+.theme-tdf{
+    --primary-color: #B58A47;
+    --primary-dark-color: #8D6C37;
+    --secondary-color: #4682B4;
+    --secondary-dark-color: #396387;
+    --background-color: #F5F5F5;
+    --text-color: #2F4F4F;
+}
 
 // DARK
 $primary-dark: #FFFFFF;
+$primary-dark-dark: #C5C5C5;
 $secondary-dark: #E8E8E8;
+$secondary-dark-dark: #939393;
 $background-dark: #3f3f2f;
 $text-dark: #f0f0f0;
+.theme-dark{
+    --primary-color: #3b3a3a;
+    --primary-dark-color: #C5C5C5;
+    --secondary-color: #E8E8E8;
+    --secondary-dark-color: #939393;
+    --background-color: #3f3f2f;
+    --text-color: #f0f0f0;
+}
+
+// GREEN SEA
+$primary-green-sea: #5FBA74;
+$primary-green-sea-dark: #4C965D;
+$secondary-green-sea: #5FBAB2;
+$secondary-green-sea-dark: #4A9790;
+$background-green-sea: #F5F5F5;
+$text-green-sea: #000000;
+.theme-green-sea{
+    --primary-color: #5FBA74;
+    --primary-dark-color: #4C965D;
+    --secondary-color: #5FBAB2;
+    --secondary-dark-color: #4A9790;
+    --background-color: #F5F5F5;
+    --text-color: #000000;
+}
 
 // NEON NIGHT
 $primary-neon-night: #FF00FF;
+$primary-neon-night-dark: #BF00BF;
 $secondary-neon-night: #00FFFF;
+$secondary-neon-night-dark: #01C1C1;
 $background-neon-night: #000000;
 $text-neon-night: #FFFFFF;
+.theme-neon-night{
+    --primary-color: #FF00FF;
+    --primary-dark-color: #BF00BF;
+    --secondary-color: #00FFFF;
+    --secondary-dark-color: #01C1C1;
+    --background-color: #000000;
+    --text-color: #FFFFFF;
+}

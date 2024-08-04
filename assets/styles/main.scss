@@ -4,19 +4,19 @@
 
 #__nuxt,
 html {
-  background-color: $background;
+  background-color: var(--background-color);
   font-family: "Lato", sans-serif;
 }
 
 h1 {
-  color: $primary !important;
+  color: var(--primary-color) !important;
   font-family: "Space Grotesk", sans-serif;
   padding-top: 2rem !important;
   font-size: 5rem !important;
 }
 
 .h1-subtitle {
-  color: $secondary;
+  color: var(--secondary-color);
   font-family: "Space Grotesk", sans-serif;
   font-size: 2rem;
   padding-top: -15rem;
@@ -24,13 +24,13 @@ h1 {
 }
 
 h2 {
-  color: $secondary !important;
+  color: var(--secondary-color) !important;
   font-family: "Space Grotesk", sans-serif;
   padding-top: 2rem !important;
 }
 
 h3 {
-  color: $secondary !important;
+  color: var(--secondary-color) !important;
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -39,32 +39,34 @@ h4 {
 }
 
 p {
-  color: $primary;
+  color: var(--text-color);
   font-family: "Lato", sans-serif;
   font-size: 1.2rem;
-  color: black;
 }
 ul {
   list-style-type: square;
 }
 
 li {
-  color: $primary;
+  color: var(--text-color);
   font-family: "Lato", sans-serif;
-  font-size: 1.2rem;
-  color: black;
+  font-size: 1.2rem;  
   margin-left: 2rem;
   padding: 0.2rem;
+
+  &::marker{
+    color: var(--primary-color);
+  }
 }
 
 a {
   text-decoration: underline;
-  color: $primary !important;
+  color: var(--primary-color) !important;
   font-weight: 600;
   font-family: 'Courier New', Courier, monospace;
 
   &:hover {
-    color: $secondary !important;
+    color: var(--secondary-color) !important;
     background-color: aqua;
   }
 }
@@ -83,12 +85,12 @@ a {
 .page-summary {
   padding: 2rem;
   background-color: rgb(255, 255, 255);
-  border: 0.2rem solid $primary;
+  border: 0.2rem solid var(--primary-color);
   margin: 2rem;
 
   .page-summary-tldr {
     font-size: large;
     font-weight: bolder;
-    color: $secondary;
+    color: var(--secondary-color);
   }
 }
