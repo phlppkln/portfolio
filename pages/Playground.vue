@@ -1,5 +1,5 @@
 <template>
-  <div class="container row">
+  <div class="container">
     <div class="row projects-playground-intro">
       Playing around can be fun. Here you can find some experimental
       ideas and projects. No guarantees for how they look or what they do.
