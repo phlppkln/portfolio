@@ -5,7 +5,7 @@
       <P5LandingPage
         :width="width"
         :height="height"
-        :loadScheme="colorScheme"
+        :theme="colorScheme"
       ></P5LandingPage>
     </div>
 
