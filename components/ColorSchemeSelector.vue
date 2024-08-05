@@ -3,7 +3,7 @@
         <div class="color-schemes-container">
             <div v-for="colorScheme in colorSchemes" class="color-scheme">
                 <div class="color-scheme-container">
-                <ColorScheme :colorSchemeName="colorScheme" :selected="colorScheme == selectedColorScheme" @click="setColorScheme(colorScheme)"></ColorScheme>
+                <ColorScheme :colorSchemeName="colorScheme" :selected="colorScheme == selectedColorScheme" @click="setColorScheme(colorScheme)" @mouseover="hoverColorScheme(colorScheme)"></ColorScheme>
             </div>
             </div>
     </div>
@@ -41,6 +41,10 @@ const setColorScheme = (value: string) => {
     changeBtnTheme(value);
 
     errorMessage.value = "";
+}
+
+const hoverColorScheme = (value: string) => {
+    emit('set-color-scheme', value);
 }
 
 const changeBtnTheme = (value: string) => {
