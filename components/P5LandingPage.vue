@@ -63,20 +63,43 @@ const neonNightColors = {
   background: "#000000",
 };
 
-const sketch = (p) => {
-  p.setup = () => {
-    // set framerate
-    p.frameRate(frameRate.value);
-    // create canvas
-    p.createCanvas(props.width, props.height);
-  };
-  let ellipseX = ref(props.width / 2);
-  let ellipseY = ref(props.height / 2);
-  p.draw = function () {
-    // TODO: update to new random positions
+const objects = ref([
+ {
+    x: props.width / 2,
+    y: props.height / 2,
+    size: 10
+  },
+  {
+    x: props.width / 2,
+    y: props.height / 2,
+    size: 10
+  },
+  {
+    x: props.width / 2,
+    y: props.height / 2,
+    size: 10
+  },
+  {
+    x: props.width / 2,
+    y: props.height / 2,
+    size: 10
+  },
+  {
+    x: props.width / 2,
+    y: props.height / 2,
+    size: 10
+  }
+])
 
-    // TODO: update color based on theme
-    const colorIndex = p.round(p.random(0, 2));
+const updateShapes = (p) => {
+  setColor(p);
+  objects.forEach((shape) => {
+    
+  })
+}
+
+const setColor = (p) => {
+  const colorIndex = p.round(p.random(0, 2));
     if (props.theme === "patagonian-knot") {
       p.background(p.color(patagKnotColors.background));
       if (colorIndex === 0) {
@@ -88,13 +111,6 @@ const sketch = (p) => {
       } else if (colorIndex === 3) {
         p.fill(p.color(patagKnotColors.text));
       }
-      p.fill(p.color(patagKnotColors.text));
-      let speed = frameRate.value * 0.1;
-      ellipseX.value = ellipseX.value + speed * (Math.random() < 0.5 ? -1 : 1);
-      ellipseY.value = ellipseY.value + speed * (Math.random() < 0.5 ? -1 : 1);
-
-      //console.log(ellipseX.value, ellipseY.value);
-      p.ellipse(ellipseX.value, ellipseY.value, 500, 500); // update the ellipse position
     } else if (props.theme === "tdf") {
       p.background(p.color(tdfColors.background));
       if (colorIndex === 0) {
@@ -106,12 +122,6 @@ const sketch = (p) => {
       } else if (colorIndex === 3) {
         p.fill(p.color(tdfColors.text));
       }
-      p.rect(
-        getRandomObjectPosition(p, props.width, 200),
-        getRandomObjectPosition(p, props.height, 200),
-        200,
-        200
-      );
     } else if (props.theme === "dark") {
       p.background(p.color(darkColors.background));
       if (colorIndex === 0) {
@@ -123,12 +133,6 @@ const sketch = (p) => {
       } else if (colorIndex === 3) {
         p.fill(p.color(darkColors.text));
       }
-      p.ellipse(
-        getRandomObjectPosition(p, props.width, 500),
-        getRandomObjectPosition(p, props.height, 500),
-        500,
-        500
-      );
     } else if (props.theme === "green-sea") {
       p.background(p.color(greenSeaColors.background));
       if (colorIndex === 0) {
@@ -140,12 +144,6 @@ const sketch = (p) => {
       } else if (colorIndex === 3) {
         p.fill(p.color(greenSeaColors.text));
       }
-      p.rect(
-        getRandomObjectPosition(p, props.width, 200),
-        getRandomObjectPosition(p, props.height, 200),
-        200,
-        200
-      );
     } else if (props.theme === "neon-night") {
       p.background(p.color(neonNightColors.background));
       if (colorIndex === 0) {
@@ -157,13 +155,63 @@ const sketch = (p) => {
       } else if (colorIndex === 3) {
         p.fill(p.color(neonNightColors.text));
       }
+    }
+}
+
+const sketch = (p) => {
+  p.setup = () => {
+    // set framerate
+    p.frameRate(frameRate.value);
+    // create canvas
+    p.createCanvas(props.width, props.height);
+  };
+
+  p.windowResized = () => {
+    p.resizeCanvas(props.width, props.height);
+  };
+  
+  let ellipseX = ref(props.width / 2);
+  let ellipseY = ref(props.height / 2);
+  p.draw = function () {
+    // update shapes
+    updateShapes(p);
+
+    // TODO: update color based on theme
+   
+      let speed = frameRate.value * 0.1;
+      ellipseX.value = ellipseX.value + speed * (Math.random() < 0.5 ? -1 : 1);
+      ellipseY.value = ellipseY.value + speed * (Math.random() < 0.5 ? -1 : 1);
+
+      //console.log(ellipseX.value, ellipseY.value);
+      p.ellipse(ellipseX.value, ellipseY.value, 500, 500); // update the ellipse position
+   
+      p.rect(
+        getRandomObjectPosition(p, props.width, 200),
+        getRandomObjectPosition(p, props.height, 200),
+        200,
+        200
+      );
+   
       p.ellipse(
         getRandomObjectPosition(p, props.width, 500),
         getRandomObjectPosition(p, props.height, 500),
         500,
         500
       );
-    }
+ 
+      p.rect(
+        getRandomObjectPosition(p, props.width, 200),
+        getRandomObjectPosition(p, props.height, 200),
+        200,
+        200
+      );
+   
+      p.ellipse(
+        getRandomObjectPosition(p, props.width, 500),
+        getRandomObjectPosition(p, props.height, 500),
+        500,
+        500
+      );
   };
 };
 
