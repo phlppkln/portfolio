@@ -9,16 +9,15 @@
       ></P5LandingPage>
     </div>
 
-    <div class="app-theme-selector-container">
+    <div class="app-theme-selector-container" v-if="true">
       <div class="color-scheme-selector-container">
         <h2 class="app-theme-selector-header">Welcome!</h2>
         <p class="app-theme-selector-text">
-          I am a designer and developer passionate about creating user-centered
-          digital experiences. In my work I use technology as a tool to generate
-          insights and explore ideas. Through a human-centered design approach,
-          I focus on understanding people's needs and implementing solutions.
+          I'm a designer and developer specializing in human-centered
+          digital experiences. I'm interested in interactive, data-driven digital systems that transform complex concepts into intuitive, impactful web interfaces.
+          My current focus is on enhancing user engagement and insight generation through creative collaboration, self-reflection, and critical thinking. 
         </p>
-        <p class="app-theme-selector-text">to enter, select an app-theme:</p>
+        <p class="app-theme-selector-text">But first, let's personalize this page:</p>
         <ColorSchemeSelector
           @set-color-scheme="setColorScheme"
           @enter-page="enterPage"
@@ -32,7 +31,7 @@
 import { onMounted } from "vue";
 const router = useRouter();
 
-const colorScheme = ref("none");
+const colorScheme = ref("patagonian-knot");
 const emit = defineEmits(["page-entered"]);
 
 import { useWindowSize } from "@vueuse/core";
@@ -40,6 +39,14 @@ import { useWindowSize } from "@vueuse/core";
 const { width, height } = useWindowSize();
 
 onMounted(() => {
+  // reset theme
+  const el = document.body;
+  const classList = el.classList;
+  classList.forEach((c) => {
+    if (c.includes("theme")) {
+      el.classList.remove(c);
+    }
+  })
   emit("page-entered", false);
 });
 
@@ -105,5 +112,8 @@ const enterPage = () => {
 .app-theme-selector-text {
   font-size: 1.5rem;
   margin-bottom: 3rem;
+  padding: 2rem;
+  border: 1rem solid black;
+  background-color: lightgoldenrodyellow;
 }
 </style>

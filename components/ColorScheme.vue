@@ -91,6 +91,8 @@ const getHeaderName = (name: string) => {
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.3);
+    transition: transform 150ms ease-in-out;
   }
 }
 
