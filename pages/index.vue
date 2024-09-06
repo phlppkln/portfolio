@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div id="landing-page-background"></div>
-    <div class="p5-background">
+    <div class="p5-background" v-if="false">
       <P5LandingPage
         :width="width"
         :height="height"
@@ -17,7 +17,7 @@
           digital experiences. I'm interested in interactive, data-driven digital systems that transform complex concepts into intuitive, impactful web interfaces.
           My current focus is on enhancing user engagement and insight generation through creative collaboration, self-reflection, and critical thinking. 
         </p>
-        <p class="app-theme-selector-text">But first, let's personalize this page:</p>
+        <p class="app-theme-selector-text">To get started, select a color theme for this page:</p>
         <ColorSchemeSelector
           @set-color-scheme="setColorScheme"
           @enter-page="enterPage"
@@ -32,7 +32,7 @@ import { onMounted } from "vue";
 const router = useRouter();
 
 const colorScheme = ref("patagonian-knot");
-const emit = defineEmits(["page-entered"]);
+const emit = defineEmits(["is-landing-page"]);
 
 import { useWindowSize } from "@vueuse/core";
 
@@ -47,7 +47,8 @@ onMounted(() => {
       el.classList.remove(c);
     }
   })
-  emit("page-entered", false);
+  emit("is-landing-page", true);
+  console.log('mounted');
 });
 
 const setColorScheme = (value: string) => {
@@ -83,8 +84,11 @@ const enterPage = () => {
   let selectedTheme = getAppTheme();
   el.classList.add(selectedTheme);
 
-  emit("page-entered", true);
-  router.push("/about");
+  // set new theme in local storage
+  localStorage.setItem("page-theme", selectedTheme);
+
+  emit("is-landing-page", false);
+  router.push("/projects");
 };
 </script>
 
@@ -113,7 +117,7 @@ const enterPage = () => {
   font-size: 1.5rem;
   margin-bottom: 3rem;
   padding: 2rem;
-  border: 1rem solid black;
+  border: 0.5rem solid black;
   background-color: lightgoldenrodyellow;
 }
 </style>

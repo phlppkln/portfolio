@@ -2,12 +2,12 @@
   <div class="container-fluid">
     <div class="color-schemes-container">
       <div v-for="colorScheme in colorSchemes" class="color-scheme">
-        <div class="color-scheme-container"
-            @click="hoverColorScheme(colorScheme)">
+        <div class="color-scheme-container">
           <ColorScheme
             :colorSchemeName="colorScheme"
             :selected="colorScheme == selectedColorScheme"
             @click="setColorScheme(colorScheme)"
+            @mouseenter="hoverColorScheme()"
           ></ColorScheme>
         </div>
       </div>
@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue";
 const selectedColorScheme = ref("");
 const btnPrimary = ref<HTMLElement | null>(null);
 
@@ -41,6 +42,13 @@ const colorSchemes = [
   "green-sea",
 ];
 
+/* const audio = ref();
+
+onMounted(() => {
+  audio.value = new Audio("/sounds/happy-pop-1-185286.mp3");
+  audio.value.volume = 0.5;
+  audio.value.load();
+}) */
 const emit = defineEmits(["set-color-scheme", "enter-page"]);
 
 const setColorScheme = (value: string) => {
@@ -52,15 +60,19 @@ const setColorScheme = (value: string) => {
   errorMessage.value = "";
 };
 
-const hoverColorScheme = (value: string) => {
-  emit("set-color-scheme", value);
-  playSoundEffect();
+const hoverColorScheme = () => {
+  //playSoundEffect();
 };
 
-const playSoundEffect = () => {
-  const audio = new Audio("/sounds/happy-pop-1-185286.mp3");
-  audio.play();
-};
+/* const playSoundEffect = () => {
+  if (audio.value) {
+    try {
+      audio.value.play();
+    } catch (error) {
+      console.error("Error playing sound effect:", error);
+    }
+  }
+}; */
 
 const changeBtnTheme = (value: string) => {
   //remove old theme from btn-primary
