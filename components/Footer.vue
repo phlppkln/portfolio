@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="footer-text">
-      <div class="footer-text-item"><a href="https://github.com/phlppkln/portfolio-philippklein.at" target="_blank">About this page</a></div>
+      <div class="footer-text-item"><a href="https://github.com/phlppkln/portfolio-philippklein.at" target="_blank">About this page <i class="bi bi-box-arrow-up-right"></i></a></div>
     </div>
     <div class="footer-text">
       <div class="footer-text-item">Contact</div>
