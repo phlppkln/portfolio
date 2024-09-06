@@ -11,38 +11,30 @@
       <div class="text-container col-md-12">
         <div class="text">
           <p>
-            Raised in Burgenland, Austria, I completed my Masters's
-            degree in Computer Science at the Technical University of Vienna (TU
-            Wien) in 2023. During my studies, I developed a passion for science
-            and design. As a result I graduated with a specialization in "Media and Human-Centered Computing". 
-            At the TU Wien, I also created an innovative self-assessment tool to support
-            people in their study decision. This platform was introduced as a
-            compulsory part of the admission process for all prospective
-            computer science students in 2024.
+            I am a designer and developer with a Master degree in Media and
+            Human-Centered Computing, specializing in human-centered design. My
+            expertise lies in human-computer interaction, information
+            visualization, and interactive web environments, with a focus on
+            human-centered design.
           </p>
           <p>
-            In my work, I focus on Human-Computer Interaction and enjoy
-            finding new ways to integrate the digital world into our lives. I
-            have developed skills in design and code, and have worked on
-            projects that aim to support people in ideation and decision making 
-            through self-reflection and information visualization.
-          </p>
-          <p>
-            When not working, you can find me exploring the great
-            outdoors across all sorts of sports. But, I especially enjoy grabbing my bike and camera to discover 
-            new connections between places on the lesser-traveled paths.
-          </p>
-          <p>
-            I especially enjoy designing all kinds of interfaces and flat and minimalistic interfaces. However, other principles 
+            My work is driven by a commitment to solving real-world problems
+            through technology, enhancing user engagement and fostering insight
+            generation, collaboration, and creativity. I have a strong
+            background in designing and developing innovative, interactive, and
+            data-driven digital environments that incorporate exploration and
+            self-reflection to support human abilities through technology by
+            transforming complex ideas into intuitive, impactful products.
           </p>
         </div>
       </div>
     </div>
 
     <div class="row education-work-container fadein5s-cubic-bezier">
-      <div class="col-md-6">
-      <h2>some hard facts:</h2>
-        <ul>
+      <!--<div class="col-md-6">
+       <h2>some hard facts:</h2>
+        
+         <ul>
           <li class="li-main">
             Master degree in "Media- and Human-Centered-Computing" and bachelor
             degree in "Media Informatics and Visual Computing"
@@ -59,7 +51,6 @@
             <li>Technische Universität Wien</li>
           </ul>
         </ul>
-        <!-- 
           <ul>
             <li class="li-main">
               Awards
@@ -72,21 +63,29 @@
                 creation @ IConCMT 2023
               </li>
             </ul>    
-          </ul> -->
-      </div>
+          </ul> 
+      </div>-->
       <div class="col-md-6">
-        <h2>my main tech stack:</h2>
+        <h1>my tech stack</h1>
+        <h2>languages:</h2>
         <ul>
-          <li>Vue | Nuxt</li>
-          <li>React | Next</li>
+          <li>HTML, CSS</li>
           <li>Javascript | Typescript</li>
-          <li>D3.js, Chart.js, p5.js, Three.js, ...</li>
           <li>Python</li>
-          <li>Figma, Miro, Adobe CC, Git, VS Code, Slack, ...</li>
         </ul>
+
+        <h2>main tools & frameworks:</h2>
+        <ul>
+          <li>Vue / React</li>
+          <li>Strapi</li>
+          <li>Bokeh</li>
+          <li>Bootstrap, Material UI</li>
+          <li>D3.js, Chart.js, p5.js, Three.js, ...</li>
+        </ul>
+
       </div>
       <div class="col-md-6">
-        <h2>my interest stack:</h2>
+        <h1>my interests</h1>
         <ul>
           <li>Human-Computer Interaction</li>
           <li>UI/UX Design</li>
@@ -95,9 +94,8 @@
           <li>Technology Supported Learning</li>
           <li>Web Development / Design</li>
           <li>(Digital) Collaboration</li>
+          <li>Human-AI Interaction</li>
         </ul>
-      </div>
-      <div class="col-md-6">
         <h2>let's have a chat:</h2>
         <ul>
           <li>
@@ -112,12 +110,14 @@
               href="https://www.linkedin.com/in/philipp-klein-5a98261b1/"
               target="_blank"
             >
-              philippklein</a
-            >
+              philippklein <i class="bi bi-box-arrow-up-right"></i
+            ></a>
           </li>
           <li>
             <i class="bi bi-github"></i>
-            <a href="https://github.com/phlppkln" target="_blank"> phlppkln</a>
+            <a href="https://github.com/phlppkln" target="_blank">
+              phlppkln <i class="bi bi-box-arrow-up-right"></i
+            ></a>
           </li>
         </ul>
       </div>
@@ -130,7 +130,7 @@
 <style scoped lang="scss">
 .container {
   @include fadein1s-cubic-bezier;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .photo-container {
   position: relative;
@@ -138,17 +138,12 @@
 }
 .text-container {
   position: relative;
-  background-color: rgba(
-    8,
-    100,
-    94,
-    0.852
-  ); /* semi-transparent white background */
+  background-color: var(--secondary-color);
   border-radius: 0rem;
   z-index: 2;
   .text {
     p {
-      color: white;
+      color: var(--background-color);
     }
   }
 }
@@ -165,7 +160,6 @@ p {
   margin: 2rem;
   margin-bottom: 4rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid black;
 }
 
 .education-work-container {
