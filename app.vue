@@ -4,7 +4,7 @@
     <NavBar id="navbar"></NavBar>
   </div>
     <div class="nuxt-page-container">
-      <NuxtPage @pageEntered="pageEntered = !pageEntered"></NuxtPage>
+      <NuxtPage @pageEntered="enterPage()"></NuxtPage>
     </div>
     <div class="footer-container" v-if="pageEntered">
     <Footer id="footer"></Footer>
@@ -14,11 +14,16 @@
 
 <script lang="ts" setup>
 
-const pageEntered = ref(false);
+const pageEntered = ref(true);
 
 onMounted(() => {
-  pageEntered.value = false;
+  pageEntered.value = true;
 });
+
+
+const enterPage = () => {
+  pageEntered.value = true;
+}
 
 
 
