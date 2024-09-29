@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="">
     <NuxtLink class="link" :to="linkTo">
       <div class="card" ref="card">
         <div class="image-container">
@@ -76,7 +76,6 @@ const card: Ref<HTMLElement | null> = ref(null);
 
 
 const setCardHeight = () => {
-  console.log(cardHeight.value);
 
   if(card.value) {
     if(cardHeight.value == 0){

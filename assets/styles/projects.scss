@@ -1,0 +1,17 @@
+.projects-playground-intro {
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
+.page-summary {
+  padding: 2rem;
+  background-color: rgb(255, 255, 255);
+  border: 0.2rem solid var(--primary-color);
+  margin: 2rem;
+
+  .page-summary-tldr {
+    font-size: large;
+    font-weight: bolder;
+    color: var(--secondary-color);
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="projecst-container">
     <div class="row projects-playground-intro">
       Here you'll find a selection of projects that I've worked on over the
       years.
@@ -127,7 +127,7 @@ const getCardMaxHeight = () => {
 </script>
 
 <style scoped lang="scss">
-.container {
+.projects-container {
   @include fadein1s-cubic-bezier;
 }
 </style>
