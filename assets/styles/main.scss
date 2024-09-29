@@ -8,6 +8,7 @@ html {
   font-family: "Lato", sans-serif;
 }
 
+// GLOBAL HTML TAG STYLES
 h1 {
   color: var(--primary-color) !important;
   font-family: "Space Grotesk", sans-serif;
@@ -43,6 +44,7 @@ p {
   font-family: "Lato", sans-serif;
   font-size: 1.2rem;
 }
+
 ul {
   list-style-type: square;
 }
@@ -68,29 +70,5 @@ a {
   &:hover {
     color: var(--secondary-color) !important;
     background-color: aqua;
-  }
-}
-
-.projects-playground-intro{
-  font-size: 1.5rem;
-  padding: 2rem;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 1rem;
-}
-
-.page-summary {
-  padding: 2rem;
-  background-color: rgb(255, 255, 255);
-  border: 0.2rem solid var(--primary-color);
-  margin: 2rem;
-
-  .page-summary-tldr {
-    font-size: large;
-    font-weight: bolder;
-    color: var(--secondary-color);
   }
 }

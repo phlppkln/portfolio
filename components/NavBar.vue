@@ -5,7 +5,7 @@
         <div :class="{ 'toggler-icon': true, 'toggler-icon-collapsed': isCollapsed }"></div>
       </div>
       <div class="navbar-nav" :class="{ 'nav-collapsed': isCollapsed }">
-        <NuxtLink to="/">
+        <NuxtLink to="/" v-if="false">
           <div class="nav-link"><i class="bi bi-palette-fill"></i> Theme</div>
         </NuxtLink>
         <NuxtLink to="/projects">

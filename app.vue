@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="container">
     <div class="navbar-container" v-if="pageEntered">
     <NavBar id="navbar"></NavBar>
   </div>
@@ -13,11 +13,17 @@
 </template>
 
 <script lang="ts" setup>
-
 const pageEntered = ref(true);
 
 onMounted(() => {
   pageEntered.value = true;
+
+
+
+  // TODO: remove if color scheme will be finished
+  const el = document.body;
+  let selectedTheme = "theme-patag-knot";
+  el.classList.add(selectedTheme);
 });
 
 

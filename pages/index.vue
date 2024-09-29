@@ -11,11 +11,6 @@ const router = useRouter();
 
 onMounted(() => {
   router.push('/about');
-
-  // remove if color scheme will be finished
-  const el = document.body;
-  let selectedTheme = "theme-patag-knot";
-  el.classList.add(selectedTheme);
 })
 </script>
 
