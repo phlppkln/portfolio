@@ -29,7 +29,6 @@
     "@nuxt/typescript-build": "^3.0.2",
     "@types/d3": "^7.4.3",
     "autoprefixer": "^10.4.20",
-    "node-sass": "^9.0.0",
     "nuxt-bootstrap-icons": "^2.0.0",
     "postcss": "^8.4.45",
     "sass-loader": "^14.2.1",

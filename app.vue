@@ -31,8 +31,6 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .container {
-  @include fadein1s-cubic-bezier;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -41,5 +39,7 @@ onMounted(() => {
   flex-direction: column;
   justify-content: top;
   flex: 1 0 auto;
+
+  @include fadein1s-cubic-bezier;
 }
 </style>
