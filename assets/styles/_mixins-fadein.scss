@@ -1,5 +1,8 @@
+@mixin fadein-default{
+    @include fadein1s-cubic-bezier;
+}
+
 @mixin fadein1s{
-    animation: fadein 1s linear forwards;
     @keyframes fadein {
         from {
             opacity: 0;
@@ -7,11 +10,13 @@
         to {
             opacity: 1;
         }
+    }
+    & {
+        animation: fadein 1s linear forwards;
     }
 }
 
 @mixin fadein4s{
-    animation: fadein 4s linear forwards;
     @keyframes fadein {
         from {
             opacity: 0;
@@ -19,11 +24,13 @@
         to {
             opacity: 1;
         }
+    }
+    & {
+        animation: fadein 4s linear forwards;
     }
 }
 
 @mixin fadein1s-cubic-bezier{
-    animation: fadein 1s cubic-bezier(0.1, 0.5, 0.7, 0.8) forwards;
     @keyframes fadein {
         from {
             opacity: 0;
@@ -31,11 +38,13 @@
         to {
             opacity: 1;
         }
+    }
+    & {
+        animation: fadein 1s cubic-bezier(0.1, 0.5, 0.7, 0.8) forwards;
     }
 }
 
 @mixin fadein5s-cubic-bezier{
-    animation: fadein 5s cubic-bezier(0.1, 0.3, 0.7, 1.0) forwards;
     @keyframes fadein {
         from {
             opacity: 0;
@@ -44,4 +53,9 @@
             opacity: 1;
         }
     }
+    & {
+        animation: fadein 5s cubic-bezier(0.1, 0.3, 0.7, 1.0) forwards;
+    }
 }
+
+

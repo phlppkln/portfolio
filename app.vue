@@ -16,12 +16,13 @@ export default {
 
 <style scoped lang="scss">
 .container {
-  @include fadein1s-cubic-bezier;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+  @include fadein-default;
+  & {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
 }
 #content {
   display: flex;

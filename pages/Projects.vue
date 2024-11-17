@@ -128,6 +128,6 @@ const getCardMaxHeight = () => {
 
 <style scoped lang="scss">
 .container {
-  @include fadein1s-cubic-bezier;
+  @include fadein-default;
 }
 </style>

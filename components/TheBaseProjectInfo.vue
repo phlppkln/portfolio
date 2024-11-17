@@ -27,17 +27,19 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .container{
-    padding: 0rem 5rem 2rem 5rem;
-    font-size: 1.5rem;
-
-    @include fadein1s-cubic-bezier;
+    @include fadein-default;
 
     .role{
-        @include fadein1s-cubic-bezier;
+        @include fadein-default;
     }
 
     .time-range{
-        @include fadein1s-cubic-bezier;
+        @include fadein-default;
+    }
+
+    & {   
+        padding: 0rem 5rem 2rem 5rem;
+        font-size: 1.5rem;
     }
 }
 
