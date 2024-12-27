@@ -46,11 +46,23 @@
         :cardHeight="0"
         :tags="['d3', 'nuxt', 'data visualization', 'information visualization', 'data exploration', 'line chart']"
       />
+
+      <TheBaseCard
+        linkTo="/playground/colorCombinator"
+        imageAlt="Color Combinator for Tailwind"
+        cardTitle="Color Combinator for Tailwind"
+        cardDescription="Color Combinator to help with color combinations for Tailwind CSS. "
+        :cardHeight=0
+        :tags="['styling', 'design', 'color', 'ui']"
+      />
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheBaseCard from '~/components/TheBaseCard.vue';
+
+</script>
 
 <style scoped lang="scss">
 

@@ -11,13 +11,17 @@
 
     <div class="app-theme-selector-container" v-if="true">
       <div class="color-scheme-selector-container">
-        <h2 class="app-theme-selector-header">Welcome!</h2>
         <p class="app-theme-selector-text">
-          I'm a designer and developer specializing in human-centered
-          digital experiences. I'm interested in interactive, data-driven digital systems that transform complex concepts into intuitive, impactful web interfaces.
-          My current focus is on enhancing user engagement and insight generation through creative collaboration, self-reflection, and critical thinking. 
+          I'm a designer and developer specializing in human-centered digital
+          experiences. My goal is to create interactive, data-driven digital
+          systems that transform complex concepts into intuitive, impactful web
+          interfaces. In my work I focus on using information visualization and
+          data exploration to enhance engagement and insight generation through
+          critical thinking.
         </p>
-        <p class="app-theme-selector-text">To get started, select a color theme for this page:</p>
+        <p class="app-theme-selector-text">
+          To enter, select a color theme first:
+        </p>
         <ColorSchemeSelector
           @set-color-scheme="setColorScheme"
           @enter-page="enterPage"
@@ -46,13 +50,27 @@ onMounted(() => {
     if (c.includes("theme")) {
       el.classList.remove(c);
     }
-  })
+  });
   emit("is-landing-page", true);
-  console.log('mounted');
 });
 
 const setColorScheme = (value: string) => {
   colorScheme.value = value;
+
+  // remove old theme from body
+  const el = document.body;
+  const classList = el.classList;
+  classList.forEach((c) => {
+    if (c.includes("theme")) {
+      el.classList.remove(c);
+    }
+  });
+  // add new theme to body
+  let selectedTheme = getAppTheme();
+  el.classList.add(selectedTheme);
+
+  // set new theme in local storage
+  localStorage.setItem("page-theme", selectedTheme);
 };
 
 const getAppTheme = () => {
@@ -117,7 +135,5 @@ const enterPage = () => {
   font-size: 1.5rem;
   margin-bottom: 3rem;
   padding: 2rem;
-  border: 0.5rem solid black;
-  background-color: lightgoldenrodyellow;
 }
 </style>
