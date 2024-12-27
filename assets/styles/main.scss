@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
+:root {
+  --theme-primary: #08645e;
+  --theme-primary-dark: #064541;
+  --theme-secondary: #bd4342;
+  --theme-secondary-dark: #9A3938;
+  --theme-background: #f1f1f1;
+  --theme-text: #000000;
+}
 
 #__nuxt,
 html {
