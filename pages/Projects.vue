@@ -7,7 +7,7 @@
     <div class="projects-grid row">
       <div class="col-xl-3 col-md-5 col-sm-12" ref="cardReimaginingDesignRef">
         <TheBaseCard
-          linkTo="/projects/reimaginingDesign"
+          linkTo="/projects/reimagining-design"
           imageSrc="/img/projects/reimagining-design/infinite_canvas_3d-space.png"
           imageAlt="Reimagining Design"
           cardTitle="Reimagining Design"
@@ -29,7 +29,7 @@
       </div>
       <div class="col-xl-3 col-md-5 col-sm-12" ref="cardOSARef">
         <TheBaseCard
-          linkTo="/projects/OSA"
+          linkTo="/projects/osa"
           imageSrc="/img/projects/osa/osa_logo.png"
           imageAlt="OSA Logo"
           cardTitle="Online Self Assessment (OSA)"
@@ -51,7 +51,7 @@
       </div>
       <div class="col-xl-3 col-md-5 col-sm-12" ref="cardSeeMoreRef">
         <TheBaseCard
-          linkTo="/projects/SeeMore"
+          linkTo="/projects/see-more"
           imageSrc="/img/projects/seeMore/seemore_logo_transp.png"
           imageAlt="SeeMore"
           cardTitle="SeeMore"
@@ -70,7 +70,7 @@
         />
       </div>
       <TheBaseCard
-        linkTo="/projects/TypingStars"
+        linkTo="/projects/typing-stars"
         imageSrc="/img/projects/typing-stars/typing_stars_logo.png"
         imageAlt="Typing Stars Logo"
         cardTitle="Typing Stars"
