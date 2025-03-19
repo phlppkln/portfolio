@@ -1,119 +1,77 @@
 <template>
-  <div class="container">
+  <div class="">
     <div class="row">
-      <div class="h1-subtitle">Hi, I am Philipp.</div>
-    </div>
-
-    <div class="row">
-      <div class="photo-container col-md-4" v-if="false">
-        <NuxtImg class="image" src="/img/Photo.jpg" />
+        <div class="photo-container col-md-4">
+          <div class="h1-subtitle">Hi, I am Philipp.</div>
+          <NuxtImg class="image" src="/me.jpg" />
       </div>
-      <div class="text-container col-md-12">
+      <div class="text-container col-md-8">
         <div class="text">
           <p>
-            Raised in Burgenland, Austria, I completed my Masters's
-            degree in Computer Science at the Technical University of Vienna (TU
-            Wien) in 2023. During my studies, I developed a passion for science
-            and design. As a result I graduated with a specialization in "Media and Human-Centered Computing". 
-            At the TU Wien, I also created an innovative self-assessment tool to support
-            people in their study decision. This platform was introduced as a
-            compulsory part of the admission process for all prospective
-            computer science students in 2024.
-          </p>
+            I a developer with a focus on building interactive data driven web interfaces.
+            In my work I combine the two fields of design and coding to enable people
+            to gain insights easier and faster. </p>
           <p>
-            In my work, I focus on Human-Computer Interaction and enjoy
-            finding new ways to integrate the digital world into our lives. I
-            have developed skills in design and code, and have worked on
-            projects that aim to support people in ideation and decision making 
-            through self-reflection and information visualization.
+            My goal is to write code for humans by building digital experiences
+            that support people in ideation, exploration, and decision making. Thus,
+            I completed a Masters's degree in Computer Science with a specialization in
+            "Media and Human-Centered Computing" at TU Wien and worked in areas such as
+            e-learning, cybersecurity, and interface design.
           </p>
           <p>
             When not working, you can find me exploring the great
-            outdoors across all sorts of sports. But, I especially enjoy grabbing my bike and camera to discover 
-            new connections between places on the lesser-traveled paths.
-          </p>
-          <p>
-            I especially enjoy designing all kinds of interfaces and flat and minimalistic interfaces. However, other principles 
+            outdoors across all sorts of sports. But, I especially enjoy grabbing my bike
+            and going off the beaten path.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="row education-work-container fadein5s-cubic-bezier">
-      <div class="col-md-6">
-      <h2>some hard facts:</h2>
-        <ul>
-          <li class="li-main">
-            Master degree in "Media- and Human-Centered-Computing" and bachelor
-            degree in "Media Informatics and Visual Computing"
-          </li>
-          <ul>
-            <li>Technische Universität Wien</li>
-          </ul>
-        </ul>
-        <ul>
-          <li class="li-main">
-            Student Assistant for Research and Administration
-          </li>
-          <ul>
-            <li>Technische Universität Wien</li>
-          </ul>
-        </ul>
-        <!-- 
-          <ul>
-            <li class="li-main">
-              Awards
-            </li>            
-            <ul>
-              <li>
-                <strong>Different Brilliant:</strong> Award for theses that
-                represent best-practice approaches to applied and artistic
-                research projects in the field of media, design and media
-                creation @ IConCMT 2023
-              </li>
-            </ul>    
-          </ul> -->
+    <div class="skills-container">
+<!--       <div class="skills-element">
+          <div class="skills-header"><h2>Education</h2></div>
+          <p>MSc. "Media- and Human-Centered-Computing" and BSc. "Media Informatics and Visual Computing"</p>
+          <p>Technische Universität Wien</p>
+      </div> -->
+      <div class="skills-element col-md-4">
+          <div class="skills-header"><h2><i class="bi bi-diagram-3"></i> InfoVis</h2></div>
+          <p>D3, Bokeh, Chart.js, Tableau, p5.js, Three.js</p>
       </div>
-      <div class="col-md-6">
-        <h2>my main tech stack:</h2>
-        <ul>
-          <li>Vue | Nuxt</li>
-          <li>React | Next</li>
-          <li>Javascript | Typescript</li>
-          <li>D3.js, Chart.js, p5.js, Three.js, ...</li>
-          <li>Python</li>
-          <li>Figma, Miro, Adobe CC, Git, VS Code, Slack, ...</li>
-        </ul>
+      <div class="skills-element col-md-4">
+          <div class="skills-header"><h2><i class="bi bi-code-square"></i> Frontend</h2></div>
+          <p>Vue/Nuxt, React/Next, HTML, CSS, Javascript, Typescript</p>
       </div>
-      <div class="col-md-6">
-        <h2>my interest stack:</h2>
-        <ul>
-          <li>Human-Computer Interaction</li>
-          <li>UI/UX Design</li>
-          <li>Information Visualization</li>
-          <li>Interaction Design</li>
-          <li>Technology Supported Learning</li>
-          <li>Web Development / Design</li>
-          <li>(Digital) Collaboration</li>
-        </ul>
+      <div class="skills-element col-md-4">
+          <div class="skills-header"><h2> <i class="bi bi-database"></i> Backend</h2></div>
+          <p>Python, Node.js, Strapi, REST, GraphQL</p>
       </div>
+      <div class="skills-element col-md-4">
+          <div class="skills-header"><h2><i class="bi bi-search"></i> Design and Research</h2></div>
+          <p>Design Thinking, UI/UX, Prototyping, Usability Testing, Interviews</p>
+      </div>
+      <div class="skills-element col-md-4">
+          <div class="skills-header"><h2><i class="bi bi-pencil"></i> Tools</h2></div>
+          <p>Git, VS Code, Figma, Miro, Jira, Adobe CC, Docker, ...</p>
+      </div>
+      <div class="skills-element col-md-4">
+          <div class="skills-header"><h2><i class="bi bi-bookmark-check"></i> Interests</h2></div>
+          <p>Human-Computer Interaction, UI/UX Design, Information Visualization, Interaction Design, Technology Supported Learning, Web Development / Design, (Digital) Collaboration</p>
+      </div>
+      
+    </div>
       <div class="col-md-6">
-        <h2>let's have a chat:</h2>
+        <h2>Contact</h2>
+        https://formspree.io/library/contact/contact-me-form/
         <ul>
           <li>
             <i class="bi bi-envelope"></i>
             <a href="mailto:klein.philipp@posteo.at">
-              klein.philipp@posteo.at</a
-            >
+              klein.philipp@posteo.at</a>
           </li>
           <li>
             <i class="bi bi-linkedin"></i>
-            <a
-              href="https://www.linkedin.com/in/philipp-klein-5a98261b1/"
-              target="_blank"
-            >
-              philippklein</a
-            >
+            <a href="https://www.linkedin.com/in/philipp-klein-5a98261b1/" target="_blank">
+              philippklein</a>
           </li>
           <li>
             <i class="bi bi-github"></i>
@@ -121,74 +79,64 @@
           </li>
         </ul>
       </div>
-    </div>
+
   </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-.container {
-  @include fadein-default;
-  &{
-  margin-top: 10%;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .image {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
   }
 }
-.photo-container {
-  position: relative;
-  z-index: 1;
-}
+
 .text-container {
-  position: relative;
-  background-color: rgba(
-    8,
-    100,
-    94,
-    0.852
-  ); /* semi-transparent white background */
-  border-radius: 0rem;
-  z-index: 2;
-  .text {
-    p {
-      color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: $background-darker;
+  margin: 1rem;
+
+  .skills-element{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 1rem;
+    border: 1px solid $primary;
+    
+    .skills-header{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    h2{
+      color: $header-on-primary ;
+      padding-top: 0.5rem !important;
     }
   }
-}
-
-p {
-  margin-top: 2rem !important;
-  font-size: 1.5em !important;
-}
-
-.citation {
-  font-style: italic;
-  font-size: 1.3rem !important;
-  text-align: right;
-  margin: 2rem;
-  margin-bottom: 4rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid black;
-}
-
-.education-work-container {
-  margin-top: 12rem;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-.li-main {
-  font-weight: bolder;
-  margin-top: 1rem;
-}
-li {
-  margin-top: 0.5rem;
-  list-style-type: square;
-
-  &::marker {
-    color: $primary;
-  }
-}
-
-.fadein5s-cubic-bezier {
-  @include fadein5s-cubic-bezier;
 }
 </style>

@@ -16,5 +16,7 @@ export default defineNuxtConfig({
 
   modules: ['nuxt-bootstrap-icons', "@nuxt/image", "@nuxt/ui"],
   plugins: ['~/plugins/p5.js'],
-  compatibilityDate: '2024-11-16'
+  image: {
+    dir: 'assets/images'
+  }
 });

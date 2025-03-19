@@ -51,10 +51,12 @@ ul {
 li {
   color: $primary;
   font-family: "Lato", sans-serif;
-  font-size: 1.2rem;
-  color: black;
   margin-left: 2rem;
   padding: 0.2rem;
+  
+    &::marker {
+      color: $primary;
+    }
 }
 
 a {

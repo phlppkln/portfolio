@@ -1,10 +1,14 @@
 <template>
   <div class="container">
-    <NavBar id="navbar"></NavBar>
-    <div id="content">
+    <div class="header">
+      <NavBar></NavBar>
+    </div>
+    <div class="content">
       <NuxtPage></NuxtPage>
     </div>
-    <Footer id="footer"></Footer>
+    <div class="footer">
+      <Footer id="footer"></Footer>
+    </div>
   </div>
 </template>
 
@@ -15,19 +19,33 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container {
-  @include fadein-default;
-  & {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-  }
+html, body{
+  width: 100%;
+  height: 100%;
 }
-#content {
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  flex: 1 0 auto;
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  gap: 1rem;
+  min-height: 100vh;
+
+  div.header {
+    grid-area: header;
+    text-align: center;
+  }
+
+  div.content {
+    grid-area: content;
+  }
+
+  div.footer {
+    grid-area: footer;
+    align-items: center;
+  }
 }
 </style>
