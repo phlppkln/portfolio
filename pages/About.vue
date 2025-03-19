@@ -61,7 +61,7 @@
     </div>
       <div class="col-md-6">
         <h2>Contact</h2>
-        https://formspree.io/library/contact/contact-me-form/
+        <!-- https://formspree.io/library/contact/contact-me-form/ -->
         <ul>
           <li>
             <i class="bi bi-envelope"></i>
