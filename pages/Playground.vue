@@ -16,7 +16,7 @@
       />
 
       <TheBaseCard
-        linkTo="/playground/radialMenu"
+        linkTo="/playground/radial-menu"
         imageAlt="Radial Menu"
         cardTitle="Radial Menu"
         cardDescription="Experimenting with radial menus to improve user experience by adding more interactivity."
@@ -36,7 +36,7 @@
       />
 
       <TheBaseCard
-        linkTo="/playground/internetUsage"
+        linkTo="/playground/internet-usage"
         imageSrc="/img/playground/wifi.svg"
         imageAlt="The Power of the Internet"
         cardTitle="The Power of the Internet"
@@ -46,11 +46,32 @@
         :cardHeight="0"
         :tags="['d3', 'nuxt', 'data visualization', 'information visualization', 'data exploration', 'line chart']"
       />
+
+      <TheBaseCard
+        linkTo="/playground/color-combinator"
+        imageAlt="Color Combinator for Tailwind"
+        cardTitle="Color Combinator for Tailwind"
+        cardDescription="Color Combinator to help with color combinations for Tailwind CSS. "
+        :cardHeight=0
+        :tags="['styling', 'design', 'color', 'ui']"
+      />
+
+      <TheBaseCard
+        linkTo="/playground/button-tests"
+        imageAlt="Button Tests"
+        cardTitle="Button Tests"
+        cardDescription="Button Tests"
+        :cardHeight=0
+        :tags="['styling', 'design', 'color', 'ui']"
+      />
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheBaseCard from '~/components/TheBaseCard.vue';
+
+</script>
 
 <style scoped lang="scss">
 

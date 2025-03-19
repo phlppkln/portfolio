@@ -1,13 +1,14 @@
 <template>
-  <div class="nav-bar-container">
+  <div class="nav-bar-container">      
+    <NuxtLink to="/" class="theme-link-big-screen">
+          <div class=""><i class="bi bi-palette-fill"></i></div>
+        </NuxtLink>
     <div class="navbar navbar-expand-lg">
       <div class="navbar-toggler" type="button" @click="toggleNavBar">
         <div :class="{ 'toggler-icon': true, 'toggler-icon-collapsed': isCollapsed }"></div>
-      </div>
+      </div>        
+
       <div class="navbar-nav" :class="{ 'nav-collapsed': isCollapsed }">
-        <NuxtLink to="/" v-if="false">
-          <div class="nav-link"><i class="bi bi-palette-fill"></i> Theme</div>
-        </NuxtLink>
         <NuxtLink to="/projects">
           <div class="nav-link"><i class="bi bi-projector"></i> Projects</div>
         </NuxtLink>
@@ -19,6 +20,9 @@
         </NuxtLink>
         <NuxtLink to="/about">
           <div class="nav-link"><i class="bi bi-file-person"></i> About</div>
+        </NuxtLink>
+        <NuxtLink to="/" class="theme-link-small-screen">
+          <div class="nav-link"><i class="bi bi-palette-fill"></i> Theme</div>
         </NuxtLink>
       </div>
     </div>
@@ -146,6 +150,28 @@ a {
 
   &.router-link-active {
     border-top: 0.2em solid var(--secondary-color);
+  }
+}
+
+.theme-link-big-screen{
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  &:hover{
+    cursor: pointer;
+    border-top: none;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.theme-link-small-screen{
+  @media screen and (min-width: 768px) {
+    display: none;    
   }
 }
 </style>

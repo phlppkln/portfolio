@@ -1,44 +1,36 @@
 <template>
-  <div class="container">
-    <div class="navbar-container" v-if="pageEntered">
-    <NavBar id="navbar"></NavBar>
-  </div>
-    <div class="nuxt-page-container">
-      <NuxtPage @pageEntered="enterPage()"></NuxtPage>
+  <div class="">
+    <div class="navbar-container" v-if="!isLandingPage">
+      <NavBar id="navbar"></NavBar>
     </div>
-    <div class="footer-container" v-if="pageEntered">
-    <Footer id="footer"></Footer>
+    <div class="nuxt-page-container">
+      <NuxtPage @isLandingPage="isLandingPage = !isLandingPage"></NuxtPage>
+    </div>
+    <div class="footer-container" v-if="!isLandingPage">
+      <Footer id="footer"></Footer>
+    </div>
   </div>
-</div>
 </template>
 
 <script lang="ts" setup>
-const pageEntered = ref(true);
+const isLandingPage = ref(false);
+const pageLoaded = ref(false);
 
 onMounted(() => {
-  pageEntered.value = true;
-
-
-
-  // TODO: remove if color scheme will be finished
+  // get theme from local storage
+  const storedTheme = localStorage.getItem("page-theme");
   const el = document.body;
-  let selectedTheme = "theme-patag-knot";
-  el.classList.add(selectedTheme);
+  if (storedTheme) {
+    el.classList.add(storedTheme);
+  } else {
+    el.classList.add("theme-patag-knot");
+  }
+  pageLoaded.value = true;
 });
-
-
-const enterPage = () => {
-  pageEntered.value = true;
-}
-
-
-
 </script>
 
 <style scoped lang="scss">
 .container {
-  @include fadein1s-cubic-bezier;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,5 +39,7 @@ const enterPage = () => {
   flex-direction: column;
   justify-content: top;
   flex: 1 0 auto;
+
+  @include fadein1s-cubic-bezier;
 }
 </style>
