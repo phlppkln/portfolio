@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-05-29',
+  typsescript: {
+    typeCheck: true
+  },
   devtools: { enabled: true },
   css: ['~/assets/styles/main.scss', 'animate.css', 'bootstrap/dist/css/bootstrap.css', 'bootstrap-icons/font/bootstrap-icons.css'],
 
