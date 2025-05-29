@@ -165,15 +165,15 @@ const language = ref("en");
 const animate = ref(false);
 
 const changeLanguage = (languageClicked?: string) => {
-  if (typeof languageClicked === "string") {
-    if (languageClicked !== language.value) {
-      language.value = languageClicked;
-      animate.value = !animate.value;
-    }
-  } else {
-    language.value = language.value == "en" ? "de" : "en";
-    animate.value = !animate.value;
-  }
+	if (typeof languageClicked === "string") {
+		if (languageClicked !== language.value) {
+			language.value = languageClicked;
+			animate.value = !animate.value;
+		}
+	} else {
+		language.value = language.value == "en" ? "de" : "en";
+		animate.value = !animate.value;
+	}
 };
 </script>
 

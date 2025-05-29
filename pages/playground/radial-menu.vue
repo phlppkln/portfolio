@@ -42,22 +42,22 @@
   </template>
   
   <script setup lang="ts">
-  import { onMounted, ref } from "vue";
-  
-  onMounted(() => {});
-  
-  const menuActive = ref<boolean>(false);
-  const currentHoverItem = ref<string>("");
-  
-  const setCurrentHoverItem = (item: string) => {
-    currentHoverItem.value = item;
-  };
-  
-  const menuToggleClick = () => {
-    // add active class
-    menuActive.value = !menuActive.value;
-  };
-  </script>
+import { onMounted, ref } from "vue";
+
+onMounted(() => {});
+
+const menuActive = ref<boolean>(false);
+const currentHoverItem = ref<string>("");
+
+const setCurrentHoverItem = (item: string) => {
+	currentHoverItem.value = item;
+};
+
+const menuToggleClick = () => {
+	// add active class
+	menuActive.value = !menuActive.value;
+};
+</script>
   
   <style scoped lang="scss">
   .hidden {

@@ -83,7 +83,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const cardOSARef = ref(null);
 const cardSeeMoreRef = ref(null);
@@ -92,38 +92,37 @@ const cardReimaginingDesignRef = ref(null);
 const cardMaxHeight = ref(0);
 
 onMounted(() => {
-  //getCardMaxHeight();
+	//getCardMaxHeight();
 });
 
 const getCardMaxHeight = () => {
-  const cardOSAElement: HTMLElement | null =
-    cardOSARef.value as HTMLElement | null;
-  const cardSeeMoreElement: HTMLElement | null =
-    cardSeeMoreRef.value as HTMLElement | null;
-  const cardReimaginingDesignElement: HTMLElement | null =
-    cardReimaginingDesignRef.value as HTMLElement | null;
+	const cardOSAElement: HTMLElement | null =
+		cardOSARef.value as HTMLElement | null;
+	const cardSeeMoreElement: HTMLElement | null =
+		cardSeeMoreRef.value as HTMLElement | null;
+	const cardReimaginingDesignElement: HTMLElement | null =
+		cardReimaginingDesignRef.value as HTMLElement | null;
 
-  // find the card with the largest height
-  const cardElements = [
-    cardOSAElement,
-    cardSeeMoreElement,
-    cardReimaginingDesignElement,
-  ];
-  let maxHeight = 0;
-  for (const cardElement of cardElements) {
-    if (cardElement) {
-      const { height } = cardElement.getBoundingClientRect();
-      if (height > maxHeight) {
-        maxHeight = height;
-      }
-    }
-  }
+	// find the card with the largest height
+	const cardElements = [
+		cardOSAElement,
+		cardSeeMoreElement,
+		cardReimaginingDesignElement,
+	];
+	let maxHeight = 0;
+	for (const cardElement of cardElements) {
+		if (cardElement) {
+			const { height } = cardElement.getBoundingClientRect();
+			if (height > maxHeight) {
+				maxHeight = height;
+			}
+		}
+	}
 
-  console.log(`The largest BaseCard element is ${maxHeight}px tall.`);
+	console.log(`The largest BaseCard element is ${maxHeight}px tall.`);
 
-  cardMaxHeight.value = maxHeight;
+	cardMaxHeight.value = maxHeight;
 };
-
 </script>
 
 <style scoped lang="scss">

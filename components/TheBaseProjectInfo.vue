@@ -14,15 +14,15 @@
 
 <script setup lang="ts">
 const props = defineProps({
-    role: {
-        type: String,
-        required: true
-    },
-    timeRange: {
-        type: String,
-        required: true
-    }
-})
+	role: {
+		type: String,
+		required: true,
+	},
+	timeRange: {
+		type: String,
+		required: true,
+	},
+});
 </script>
 
 <style scoped lang="scss">

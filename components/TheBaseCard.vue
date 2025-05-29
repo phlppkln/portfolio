@@ -28,68 +28,73 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, toRefs } from "vue";
+import { onMounted, ref, toRefs } from "vue";
 
 const props = defineProps({
-  linkTo: {
-    type: String,
-    required: true,
-  },
-  imageSrc: {
-    type: String,
-    required: false,
-  },
-  imageAlt: {
-    type: String,
-    required: true,
-  },
-  cardTitle: {
-    type: String,
-    required: true,
-  },
-  cardDescription: {
-    type: String,
-    required: true,
-  },
-  projectStatus: {
-    type: String,
-    required: false,
-  },
-  timeRange: {
-    type: String,
-    required: false,
-  },
-  tags: {
-    type: Array,
-    required: false,
-    default: null,
-  },
-  cardHeight: {
-    type: Number || String,
-    required: false,
-    default: 'auto'
-  }
+	linkTo: {
+		type: String,
+		required: true,
+	},
+	imageSrc: {
+		type: String,
+		required: false,
+	},
+	imageAlt: {
+		type: String,
+		required: true,
+	},
+	cardTitle: {
+		type: String,
+		required: true,
+	},
+	cardDescription: {
+		type: String,
+		required: true,
+	},
+	projectStatus: {
+		type: String,
+		required: false,
+	},
+	timeRange: {
+		type: String,
+		required: false,
+	},
+	tags: {
+		type: Array,
+		required: false,
+		default: null,
+	},
+	cardHeight: {
+		type: Number || String,
+		required: false,
+		default: "auto",
+	},
 });
-const { imageSrc, imageAlt, cardTitle, cardDescription, timeRange, tags, cardHeight } = toRefs(props);
+const {
+	imageSrc,
+	imageAlt,
+	cardTitle,
+	cardDescription,
+	timeRange,
+	tags,
+	cardHeight,
+} = toRefs(props);
 
 const card: Ref<HTMLElement | null> = ref(null);
 
-
 const setCardHeight = () => {
-  console.log(cardHeight.value);
+	console.log(cardHeight.value);
 
-  if(card.value) {
-    if(cardHeight.value == 0){
-    card.value.style.height = "auto";
-  }
-  else{
-    card.value.style.height = cardHeight.value+'px';
-  }
-  }
+	if (card.value) {
+		if (cardHeight.value == 0) {
+			card.value.style.height = "auto";
+		} else {
+			card.value.style.height = cardHeight.value + "px";
+		}
+	}
 };
 
 watch(() => cardHeight.value, setCardHeight);
-
 </script>
 
 <style scoped lang="scss">

@@ -27,12 +27,12 @@
 
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const isCollapsed = ref(true);
 
 const toggleNavBar = () => {
-  isCollapsed.value = !isCollapsed.value;
+	isCollapsed.value = !isCollapsed.value;
 };
 </script>
 

@@ -411,29 +411,29 @@ const animate = ref(false);
 const abstractExtended = ref(false);
 
 const showAbstract = () => {
-  animate.value = !animate.value;
-  abstractExtended.value = !abstractExtended.value;
+	animate.value = !animate.value;
+	abstractExtended.value = !abstractExtended.value;
 };
 
 const changeLanguage = (languageClicked?: string) => {
-  if (typeof languageClicked === "string") {
-    if (languageClicked !== language.value) {
-      language.value = languageClicked;
-      animate.value = !animate.value;
-    }
-  } else {
-    language.value = language.value == "en" ? "de" : "en";
-    animate.value = !animate.value;
-  }
+	if (typeof languageClicked === "string") {
+		if (languageClicked !== language.value) {
+			language.value = languageClicked;
+			animate.value = !animate.value;
+		}
+	} else {
+		language.value = language.value == "en" ? "de" : "en";
+		animate.value = !animate.value;
+	}
 };
 
 const abstractItem = [
-  {
-    label: "Abstract",
-    icon: "i-bi-information-circle",
-    defaultOpen: false,
-    slot: "abstract",
-  },
+	{
+		label: "Abstract",
+		icon: "i-bi-information-circle",
+		defaultOpen: false,
+		slot: "abstract",
+	},
 ];
 </script>
 

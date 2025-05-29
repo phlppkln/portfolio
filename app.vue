@@ -14,7 +14,7 @@
 
 <script lang="ts">
 export default {
-  name: "App",
+	name: "App",
 };
 </script>
 
